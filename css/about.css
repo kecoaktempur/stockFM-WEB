@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+
+.about {
+    width: 100%;
+    padding: 78px 0x;
+    background-color: #0d1530;
+}
+.about img {
+    height: auto;
+    width: 400px;
+}
+.about-text {
+}
+.about-text h1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.about-maul {
+    display: flex;
+}
+.about-maul img {
+}
+.about-maul 
+.about-ferry {
+}
+.about-ferry img {
+    width: 300px;
+}
+.main {
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}

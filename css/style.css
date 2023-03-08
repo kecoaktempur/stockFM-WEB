@@ -22,7 +22,7 @@ header {
     left: 0;
     width: 100%;
     padding: 20px 30px;
-    background: #162938;
+    background: #0d1530;
     display: flex;
     justify-content: space-between;
     z-index: 99;
@@ -78,7 +78,7 @@ header {
     color: #162938;
 }
 .wrapper {
-    position: relative;
+    position: fixed;
     width: 400px;
     height: 440px;
     background: transparent;
@@ -97,6 +97,8 @@ header {
     -moz-transition: transform .5s ease, height .2s ease;
     -ms-transition: transform .5s ease, height .2s ease;
     -o-transition: transform .5s ease, height .2s ease;
+    margin-left: 50%;
+    margin-right: 50%;
 }
 .wrapper.active-popup {
     transform: scale(1);
