@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(https://imageio.forbes.com/specials-images/imageserve/628698f832c47122b8a3642e/sugar-factory-industry-line-production-cane-process/960x0.jpg?format=jpg&width=960);
+    background-size: cover;
+    background-position: center;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 30px;
+    background: #162938;
+    display: flex;
+    justify-content: space-between;
+    z-index: 99;
+}
+
+.logo {
+    font-size: 2em;
+    color: #fff;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    text-decoration: none;
+}
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 80px;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: .5s;
+}
+.navbar a:hover:after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navbar .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navbar .btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+.search {
+    display: flex;
+    position: absolute;
+    top: 25px;
+    height: 24px;
+    padding-top: 5px;
+    margin-left: 260px;
+}
+.searchterm {
+    border: none;
+    outline-style: solid;
+    outline-color: #8a8a8a;
+    border-radius: 12px;
+    padding-left: 20px;
+    width: 450px;
+}
+.searchterm:focus {
+    color: #8a8a8a;
+}
+.hashtag_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    margin-top: -5px;
+    padding-left: 25px;
+    width: 100%;
+    height: 40px;
+    left: 240px;
+    top: 95px;
+    background-color: rgb(255, 255, 255, 0.9);
+}
+.hashtag_container ul {
+    padding-left: 40px;
+    list-style-type: none;
+}
+.hashtag_container li {
+    display: flex;
+    float: left;
+    margin-left: 40px;
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #8a8a8a;
+}
+.hashtag_container p {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+}
+.sidebar {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 240px;
+    height: 800px;
+    background-color: #ffffff;
+    padding-top: 0;
+}
+.add_product {
+    width: 220px;
+    height: 60px;
+    background-color: #777777;
+    border-radius: 15px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.card_add {
+    padding: 10px 10px 5px 30px;
+}
+.card_add h2 {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 23px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    top: -36px;
+}
+.card_add p {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    left: -7px;
+    top: -33px;
+}
+.card_add i {
+    position: relative;
+    color: #ffffff;
+    font-size: 30px;
+    padding-top: 6px;
+}
+.text_container ul {
+    margin-left: 40px;
+    list-style-type: none;
+}
+.text_container li {
+    margin-top: 20px;
+}
+.main_container {
+    position: absolute;
+    width: auto;
+    height: 2160px;
+    left: 260px;
+    top: 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.box {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+.container {
+    position: relative;
+    width: 210px;
+    height: 240px;
+    border-radius: 20px;
+    background: #8a8a8a;
+    padding: 0px;
+}
+.avatar_container {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    left: 160px;
+    top: 10px;
+}
+.wish_box {
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    left: 38px;
+    top: 230px;
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: 0px 0px 10px 1px rgb(0, 0, 0, 0.4);
+    display: flex;
+}
+.wish_box i {
+    font-size: 15px;
+    padding: 2px 0px 0px 5px;
+}
+.wish_box p {
+    font-family: 'Barlow';
+    padding-left: 5px;
+}
+.right_bar {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 60px;
+    height: 800px;
+    border-left: #8a8a8a;
+    border-style: solid;
+    border-width: 1px;
+    border-bottom: none;
+    border-right: none;
+    border-top: none;
+    background-color: rgb(255, 255, 255);
+}
+.hero {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    position: relative;
+    top: 0px;
+    left: 7px;
+    margin-bottom: 40px;
+}
+.friend {
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    position: relative;
+    left: 12px;
+}
