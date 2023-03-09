@@ -4,7 +4,6 @@
   box-sizing: border-box;
   padding: 0px;
 }
-/* Navbar */
 
 header {
   position: fixed;
@@ -17,7 +16,10 @@ header {
   justify-content: space-between;
   z-index: 99;
 }
-
+header img {
+  height: 50px;
+  width: auto;
+}
 .logo {
   font-size: 2em;
   color: #fff;
@@ -88,8 +90,8 @@ header {
   -moz-transition: transform .5s ease, height .2s ease;
   -ms-transition: transform .5s ease, height .2s ease;
   -o-transition: transform .5s ease, height .2s ease;
-  margin-left: 50%;
-  margin-right: 50%;
+
+  z-index: 1;
   font-family: 'Poppins',cursive;
 }
 .wrapper.active-popup {
