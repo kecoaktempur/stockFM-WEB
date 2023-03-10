@@ -274,7 +274,7 @@ header img {
     position: relative;
     width: auto;
 }
-.icon {
+.about-text a {
     font-size: 40px;
     color: #fff;
     cursor: pointer;
