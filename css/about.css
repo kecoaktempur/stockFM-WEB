@@ -279,12 +279,9 @@ header img {
     color: #fff;
     cursor: pointer;
     transition: 0.5s;
-    -webkit-transition:;
-    -moz-transition:;
-    -ms-transition:;
-    -o-transition:;
 }
 .about h1 {
+    margin: 100px 0 60px 0;
     color: #fff;
     font-size: 50px;
 }
