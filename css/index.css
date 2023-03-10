@@ -236,9 +236,10 @@ header img {
 
 /* Jumbotron */
 .content {
+  position: relative;
   height: 830px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background-color: #0d1530;
   padding: 0px 100px 0px 100px;
@@ -259,9 +260,6 @@ header img {
   line-height: 1.4;
   text-align: justify;
   padding-bottom: 30px;
-}
-.content .gambar-content {
-  padding-left: 100px;
 }
 
 .content a {
@@ -320,4 +318,22 @@ content a:focus {
 }
 .card .content-card p {
   padding-top: 10px;
+}
+.parallax {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(#0075c7 0%, #0d1530 80%);
+  overflow: hidden;
+}
+.parallax img {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  background-color: transparent;
 }
