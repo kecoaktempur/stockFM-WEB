@@ -100,7 +100,7 @@ header img {
     -moz-transition: transform .5s ease, height .2s ease;
     -ms-transition: transform .5s ease, height .2s ease;
     -o-transition: transform .5s ease, height .2s ease;
-
+    margin: 50% 50% 50% 50%;
     z-index: 1;
 }
 .wrapper.active-popup {
@@ -241,7 +241,7 @@ header img {
 }
 .about {
     width: 100%;
-    padding: 78px 0x;
+    padding: 178px 0x;
     background-color: #0d1530;
     margin: 0 0 5px 0;
 }
@@ -272,19 +272,28 @@ header img {
 }
 .about-text {
     position: relative;
-    width: 750px;
+    width: auto;
+}
+.icon {
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s;
+    -webkit-transition:;
+    -moz-transition:;
+    -ms-transition:;
+    -o-transition:;
 }
 .about h1 {
     color: #fff;
     font-size: 50px;
-    margin-top: 100px;
 }
 .about-text h4 {
     font-family: 'Poppins', sans-serif;
     color: white;
     font-size: 35px;
     text-transform: capitalize;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 .about-text span {
     color: #f90;
@@ -292,11 +301,13 @@ header img {
 .about-text  h5{
     color: white;
     font-size: large;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 .about-text p {
     color: white;
     text-align: justify;
+    width: 600px;
+    margin-bottom: 30px;
 }
 .about-place {
     display: flex;
