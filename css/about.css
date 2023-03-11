@@ -100,7 +100,8 @@ header img {
     -moz-transition: transform .5s ease, height .2s ease;
     -ms-transition: transform .5s ease, height .2s ease;
     -o-transition: transform .5s ease, height .2s ease;
-    margin: 50% 50% 50% 50%;
+    top: 50%;
+    bottom: 50%;
     z-index: 1;
 }
 .wrapper.active-popup {
@@ -241,11 +242,11 @@ header img {
 }
 .about {
     width: 100%;
-    padding: 178px 0x;
+    padding: 78px 0;
     background-color: #0d1530;
     margin: 0 0 5px 0;
 }
-.about img {
+.card img {
     height: auto;
     width: 350px;
     filter: grayscale();
@@ -255,13 +256,13 @@ header img {
     -moz-transition: .5s ease;
     -ms-transition: .5s ease;
     -o-transition: .5s ease;
-    border-radius: 25px;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    -ms-border-radius: 25px;
-    -o-border-radius: 25px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
-.about img:hover {
+.card img:hover {
     filter: none;
     -webkit-filter: none;
     transform: scale(1.1);
@@ -281,7 +282,7 @@ header img {
     transition: 0.5s;
 }
 .about h1 {
-    margin: 100px 0 60px 0;
+    margin: 40px 0 80px 0;
     color: #fff;
     font-size: 50px;
 }
@@ -319,4 +320,24 @@ header img {
     justify-content: space-around;
     margin-top: 40px;
     margin-bottom: 100px;
+    overflow: hidden;
+}
+.triangle-bg-left{
+    position: absolute;
+    width: 700px;
+    margin-right: 90%;
+    margin-top: 100px;
+}
+
+.triangle-bg-right{
+    position: absolute;
+    width: 400px;
+    margin-left: 60%;
+    margin-top: 500px;
+}
+.triangle-bg-mid{
+    position: absolute;
+    width: 200px;
+    margin-right: 10%;
+    margin-top: 500px;
 }

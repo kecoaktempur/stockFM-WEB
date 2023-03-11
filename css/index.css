@@ -11,7 +11,7 @@ header {
   left: 0;
   width: 100%;
   padding: 20px 30px;
-  background: #0d1530;
+  background: transparent;
   display: flex;
   justify-content: space-between;
   z-index: 99;

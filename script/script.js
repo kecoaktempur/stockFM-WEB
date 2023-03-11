@@ -38,3 +38,15 @@ window.addEventListener('scroll', () => {
     kanan.style.left = value*2 + 'px';
 });
 
+const trileft = document.getElementById('triangle-bg-left');
+const trimid = document.getElementById('triangle-bg-mid');
+const triright = document.getElementById('triangle-bg-right');
+
+window.addEventListener('scroll', () => {
+    let value = window.scrollY;
+
+    trileft.style.top = value*0.3 + 'px';
+    trimid.style.top = value*0.4 + 'px';
+    triright.style.top = value*0.5 + 'px';
+});
+
