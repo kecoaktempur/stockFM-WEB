@@ -31,9 +31,9 @@ const logo = document.getElementById('logoswipe');
 window.addEventListener('scroll', () => {
     let value = window.scrollY;
 
-    logo.style.left = value*-3 + 'px';
-    truck.style.left = value*3 + 'px';
-    awan.style.top = value*-2 + 'px';
+    logo.style.left = value*-2 + 'px';
+    truck.style.left = value*1.1 + 'px';
+    awan.style.top = value*-1.5 + 'px';
     kiri.style.left = value*-2 + 'px';
     kanan.style.left = value*2 + 'px';
 });
