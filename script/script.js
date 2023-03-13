@@ -22,7 +22,8 @@ btnClose.addEventListener('click', ()=> {
 
 const kiri = document.getElementById('building-kiri');
 const kanan = document.getElementById('building-kanan');
-const awan = document.getElementById('awan');
+const wankanan = document.getElementById('awan-kekanan');
+const wankiri = document.getElementById('awan-kekiri');
 const factory = document.getElementById('factory');
 const floor = document.getElementById('floor-trees');
 const truck = document.getElementById('truck');
@@ -33,7 +34,8 @@ window.addEventListener('scroll', () => {
 
     logo.style.left = value*-2 + 'px';
     truck.style.left = value*1.1 + 'px';
-    awan.style.top = value*-1.5 + 'px';
+    wankanan.style.left = value*-1.3 + 'px';
+    wankiri.style.left = value*1.3 + 'px';
     kiri.style.left = value*-2 + 'px';
     kanan.style.left = value*2 + 'px';
 });
