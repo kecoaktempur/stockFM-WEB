@@ -20,8 +20,6 @@ btnClose.addEventListener('click', ()=> {
     wrapper.classList.remove('active-popup');
 });
 
-const kiri = document.getElementById('building-kiri');
-const kanan = document.getElementById('building-kanan');
 const wankanan = document.getElementById('awan-kekanan');
 const wankiri = document.getElementById('awan-kekiri');
 const factory = document.getElementById('factory');
@@ -36,8 +34,6 @@ window.addEventListener('scroll', () => {
     truck.style.left = value*1.1 + 'px';
     wankanan.style.left = value*-1.3 + 'px';
     wankiri.style.left = value*1.3 + 'px';
-    kiri.style.left = value*-2 + 'px';
-    kanan.style.left = value*2 + 'px';
 });
 
 const trileft = document.getElementById('triangle-bg-left');
