@@ -261,6 +261,9 @@ header img {
   text-align: justify;
   padding-bottom: 30px;
 }
+.gambar-content {
+  z-index: 1;
+}
 .check {
   background-color: #333333;
   width: 160px;
@@ -276,7 +279,7 @@ header img {
 .check:hover {
   transform: scale(1.1);
   border: 2px solid #ff4b2b;
-  background-color: none;
+  background-color: transparent;
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
@@ -338,7 +341,7 @@ header img {
   -o-border-radius: 6px;
   background-color: #ff4b2b;
   color: #fff;
-  font-family: 'Poppins',cursive;
+  font-family: 'Montserrat', sans-serif;
 }
 .feature {
   width: 100%;
@@ -362,6 +365,7 @@ header img {
 .value-text {
   background-color: #0d1530;
   color: #fff;
+  padding-top: 140px;
 }
 .value {
   width: 23%;
@@ -375,6 +379,7 @@ header img {
   -o-border-radius: 25px;
   cursor: pointer;
   margin: 15px 0;
+  z-index: 1;
 }
 .value img {
   width: 100%;
@@ -392,4 +397,25 @@ header img {
 }
 .value-desc span {
   font-size: 22px;
+}
+
+/* Triangle */
+.triangle-bg-left{
+  position: absolute;
+  width: 700px;
+  margin-right: 90%;
+  margin-top: 100px;
+  z-index: 0;
+}
+.triangle-bg-right{
+  position: absolute;
+  width: 400px;
+  margin-left: 60%;
+  margin-top: 0px;
+}
+.triangle-bg-mid{
+  position: absolute;
+  width: 200px;
+  margin-right: 10%;
+  margin-top: 500px;
 }
