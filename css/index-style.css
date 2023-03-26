@@ -347,9 +347,10 @@ header {
     align-items: start;
     width: 100vw;
     height: 100%;
-    gap: 40px;
+    gap: 20px;
     padding-top: 160px;
     padding-right: 150px;
+    margin-left: 280px;
 }
 .item-card {
     position: relative;
@@ -367,6 +368,20 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.item-card button {
+    color: #fff;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin-bottom: 3px;
+    cursor: pointer;
+}
+.check-item-button {
+    border: 1px solid #fff;
+}
+.wishlist {
+    border: none;
 }
 .item-card img {
     width: 100%;
