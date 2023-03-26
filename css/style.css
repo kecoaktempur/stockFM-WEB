@@ -100,7 +100,6 @@ header img {
     -moz-transition: transform .5s ease, height .2s ease;
     -ms-transition: transform .5s ease, height .2s ease;
     -o-transition: transform .5s ease, height .2s ease;
-
     z-index: 1;
 }
 .wrapper.active-popup {

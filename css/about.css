@@ -100,12 +100,15 @@ header img {
     -moz-transition: transform .5s ease, height .2s ease;
     -ms-transition: transform .5s ease, height .2s ease;
     -o-transition: transform .5s ease, height .2s ease;
-    top: 50%;
-    bottom: 50%;
-    z-index: 1;
+    z-index: 99;
+    top: 30vh;
 }
 .wrapper.active-popup {
     transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
 }
 .wrapper.active {
     height: 520px;
@@ -327,7 +330,7 @@ header img {
     width: 700px;
     margin-right: 90%;
     margin-top: 100px;
-    z-index: 1;
+    z-index: 0;
 }
 
 .triangle-bg-right{
@@ -335,12 +338,12 @@ header img {
     width: 400px;
     margin-left: 60%;
     margin-top: 300px;
-    z-index: 1;
+    z-index: 0;
 }
 .triangle-bg-mid{
     position: absolute;
     width: 200px;
     margin-right: 10%;
     margin-top: 10vh;
-    z-index: 1;
+    z-index: 0;
 }
