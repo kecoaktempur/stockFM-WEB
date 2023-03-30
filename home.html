@@ -1,175 +1,196 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="ie-edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
-            STOCK FM
-        </title>
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-        <script src="https://kit.fontawesome.com/5ac7027fdd.js" crossorigin="anonymous"></script>
-        <link rel="icon" type="image/x-icon" href="/img/Logo cropped.png">
-        <link rel="stylesheet" href="css/index-style.css">
-        </script>
-    </head>
-    <body>
-        <div class="wrapper">
-            <span class="icon-close"><ion-icon name="close"></ion-icon></span>
-            <div class="form-box login">
-                <h2>
-                    <span>Login</span>
-                </h2>
-                <form action="#">
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                        <input type="email" required>
-                        <label>Email</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                        <input type="password" required>
-                        <label>Password</label>
-                    </div>
-                    <div class="remember-forgot">
-                        <label><input type="checkbox">Remember Me?</label>
-                        <a href="#">Forgot Password?</a>
-                    </div>
-                    <button type="submit" class="login-btn">Login</button>
-                    <div class="login-register">
-                        <p> Don't have an account?
-                            <a class="register-link" href="#">Register</a>
-                        </p>
-                    </div>
-                </form>
-            </div>
-            <div class="form-box register">
-                <h2>
-                    <span>Registration</span>
-                </h2>
-                <form action="#">
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="person"></ion-icon></span>
-                        <input type="text" required>
-                        <label>Username</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                        <input type="email" required>
-                        <label>Email</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                        <input type="password" required>
-                        <label>Password</label>
-                    </div>
-                    <div class="remember-forgot">
-                        <label><input type="checkbox">Agree to Terms & Conditions</label>
-                    </div>
-                    <button type="submit" class="login-btn">Register</button>
-                    <div class="login-register">
-                        <p> Already have an account?
-                            <a class="login-link" href="#">Login</a>
-                        </p>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <header>
-            <a href="index.html">
-                <img src="img/LogoWhite.png" alt="", width="160"style="cursor: pointer;">
-                </a>
-            <div class="search">
-                <input type="text" class="searchterm" placeholder="Search items...">
-            </div>
-            <nav class="navbar">
-                <a href="home.html"> Our Product</a>
-                <a href="about-us.html">About Us</a>
-                <a href="#">Contact</a>
-                <button class="btnLogin-popup">Login</button>
-                <div class="sidebar">
-                    <button class="add_product">
-                        <i><ion-icon name="add-outline"></ion-icon></i>
-                        <div class="text-place">
-                            <h2>Add Product</h2>
-                            <p>Add a Product here</p>
-                        </div>
-                    </button>
-                    <div class="text_container">
-                        <ul>
-                            <li><ion-icon name="cart-outline"></ion-icon>
-                                Discover
-                            </li>
-                            <li><ion-icon name="heart-outline"></ion-icon>
-                                Wishlist
-                            </li>
-                            <li><ion-icon name="trending-up-outline"></ion-icon>
-                                Trending
-                            </li>
-                            <li><ion-icon name="filter-outline"></ion-icon>
-                                Category
-                            </li>
-                        </ul>
-                    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        STOCK FM
+    </title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://kit.fontawesome.com/5ac7027fdd.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="/img/Logo cropped.png">
+    <link rel="stylesheet" href="css/index-style.css">
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <span class="icon-close">
+            <ion-icon name="close"></ion-icon>
+        </span>
+        <div class="form-box login">
+            <h2>
+                <span>Login</span>
+            </h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" required>
+                    <label>Email</label>
                 </div>
-                <div class="hashtag_container">
-
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember Me?</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+                <div class="login-register">
+                    <p> Don't have an account?
+                        <a class="register-link" href="#">Register</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+        <div class="form-box register">
+            <h2>
+                <span>Registration</span>
+            </h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Agree to Terms & Conditions</label>
+                </div>
+                <button type="submit" class="login-btn">Register</button>
+                <div class="login-register">
+                    <p> Already have an account?
+                        <a class="login-link" href="#">Login</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <header>
+        <a href="index.html">
+            <img src="img/LogoWhite.png" alt="" , width="160" style="cursor: pointer;">
+        </a>
+        <div class="search">
+            <input type="text" class="searchterm" placeholder="Search items...">
+        </div>
+        <nav class="navbar">
+            <a href="home.html"> Our Product</a>
+            <a href="about-us.html">About Us</a>
+            <a href="#">Contact</a>
+            <button class="btnLogin-popup">Login</button>
+            <div class="sidebar">
+                <button class="add_product">
+                    <i>
+                        <ion-icon name="add-outline"></ion-icon>
+                    </i>
+                    <div class="text-place">
+                        <h2>Add Product</h2>
+                        <p>Add a Product here</p>
+                    </div>
+                </button>
+                <div class="text_container">
                     <ul>
                         <li>
-                            <button>
-                                <ion-icon name="chevron-back-outline"></ion-icon></li>
-                            </button>
-                        <li>#sand</li>
-                        <li>#wood</li>
-                        <li>#metal</li>
-                        <li>#chemical</li>
-                        <li>#ceramic</li>
-                        <li>#plate</li>
-                        <li>#gold</li>
-                        <li>#liquid</li>
-                        <li>#stone</li>
-                        <li>#silver</li>
-                        <li>#pipe</li>
+                            <ion-icon name="cart-outline"></ion-icon>
+                            Discover
+                        </li>
                         <li>
-                            <button>
-                                <ion-icon name="chevron-forward-outline"></ion-icon>
-                            </button>
+                            <ion-icon name="heart-outline"></ion-icon>
+                            Wishlist
+                        </li>
+                        <li>
+                            <ion-icon name="trending-up-outline"></ion-icon>
+                            Trending
+                        </li>
+                        <li>
+                            <ion-icon name="filter-outline"></ion-icon>
+                            Category
                         </li>
                     </ul>
                 </div>
-            </nav>
-        </header>
-        <div class="item">
-            <h2>
-                Discover
-            </h2>
-            <div class="item-page">
-                <div class="item-card">
-                    <img src="img/Bata_putih.png" alt="">
-                    <h3 style="color: #fff; letter-spacing: 3;">
-                        Bata Putih
-                    </h3>
-                    <button class="check-item-button" href="#">
-                        Check Item
+            </div>
+            <div class="hashtag_container">
+
+                <ul>
+                    <li>
+                        <button>
+                            <ion-icon name="chevron-back-outline"></ion-icon>
+                    </li>
                     </button>
-                    <button class="wishlist" onclick="">
-                        <i class="fa-regular fa-heart"></i>
-                    </button>
+                    <li>#sand</li>
+                    <li>#wood</li>
+                    <li>#metal</li>
+                    <li>#chemical</li>
+                    <li>#ceramic</li>
+                    <li>#plate</li>
+                    <li>#gold</li>
+                    <li>#liquid</li>
+                    <li>#stone</li>
+                    <li>#silver</li>
+                    <li>#pipe</li>
+                    <li>
+                        <button>
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="item">
+        <h2>
+            Discover
+        </h2>
+        <div class="item-page">
+            <div class="item-card">
+                <img src="img/Bata_putih.png" alt="">
+                <h3 style="color: #fff; letter-spacing: 3;">
+                    Bata Putih
+                </h3>
+                <button class="check-item-button" href="#">
+                    Check Item
+                </button>
+                <button class="wishlist" onclick="">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+            </div>
+            <div class="item-card">
+                <div class="product-item-image">
                 </div>
-                <div class="item-card">
-                    <div class="product-item-image">
-                    </div>
+            </div>
+            <div class="item-card">
+                <div class="product-item-image">
                 </div>
-                <div class="item-card">
-                    <div class="product-item-image">
-                    </div>
-                </div>
-                <div class="item-card">
-                    <div class="product-item-image">
-                    </div>
+            </div>
+            <div class="item-card">
+                <div class="product-item-image">
                 </div>
             </div>
         </div>
-        <script src="script/script.js"></script>
-    </body>
+    </div>
+    <script src="script/script.js"></script>
+</body>
+
 </html>
