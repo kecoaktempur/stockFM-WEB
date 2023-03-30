@@ -4,7 +4,9 @@
   box-sizing: border-box;
   padding: 0px;
 }
-
+body {
+  background-color: #0d1530;
+}
 header {
   position: fixed;
   top: 0;
@@ -344,7 +346,7 @@ header img {
   justify-content: space-around;
   align-items: center;
   background-color: #0d1530;
-  padding: 150px 100px 100px 0;
+  padding: 150px 100px 0 100px;
   flex-wrap: wrap-reverse;
 }
 .content .text {
@@ -445,7 +447,14 @@ header img {
   display: flex;
   justify-content: center;
   gap: 40px;
-  margin-bottom: 120px;
+  margin-bottom: 60px;
+}
+.feature h2 {
+  color: #fff;
+  font-family: 'Poppins';
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 30px;
 }
 .feature-box {
   width: 200px;
@@ -558,6 +567,7 @@ header img {
   justify-content: center;
   align-items: center;
   background-color: #0d1530;
+  margin-bottom: 100px;
 }
 .heading {
   width: 100%;
@@ -566,7 +576,7 @@ header img {
   padding: 0 100px;
 }
 .heading h2 {
-  font-size: 40px;
+  font-size: 35px;
   position: relative;
   display: inline-block;
 }
@@ -603,6 +613,7 @@ header img {
   margin: 10em 0 0 0;
 }
 .card {
+  width: 400px;
   color: #fff;
   padding: 1em;
   text-align: center;
@@ -640,4 +651,16 @@ header img {
 }
 .services .card:nth-child(3) .light {
   background: #48fc8b;
+}
+.photo-grid {
+  width: 100%;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.photo-grid img {
+  justify-content: center;
+  width: 1325px;
+  height: 300px;
 }
