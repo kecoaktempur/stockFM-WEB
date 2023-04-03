@@ -13,6 +13,7 @@ body {
   background-image: radial-gradient(#b36529 2.5px, transparent 2.5px);
   background-size: 100px 100px;
   background-color: #0d1530;
+  overflow-x: hidden;
 }
 header {
   position: fixed;
@@ -360,6 +361,7 @@ header {
   gap: 20px;
   padding-right: 150px;
   margin-left: 280px;
+  flex-wrap: wrap;
 }
 .item-card {
   position: relative;

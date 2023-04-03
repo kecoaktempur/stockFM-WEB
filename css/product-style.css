@@ -10,7 +10,9 @@
 }
 
 body{
-    background-color: #fff;
+    background-image: radial-gradient(#b36529 2.5px, transparent 2.5px);
+    background-size: 100px 100px;
+    background-color: #0d1530;
 }
 
 .container{

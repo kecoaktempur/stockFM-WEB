@@ -38,7 +38,7 @@ function changeColor(){
 
     gradient.addEventListener('animationend', () => {
         animationEnd = true;
-    })
+    });
 }
 
 sizes.forEach(size => size.addEventListener('click', changeSize));
