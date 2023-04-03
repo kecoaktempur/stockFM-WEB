@@ -10,10 +10,9 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: radial-gradient(farthest-side at -33.33% 50%, #0000 52%, rgba(204, 156, 94, 0.68) 54% 57%, #0000 59%) 0 calc(300px / 2),
-    radial-gradient(farthest-side at 50% 133.33%, #0000 52%, rgba(204, 156, 94, 0.68) 54% 57%, #0000 59%) calc(300px / 2) 0, radial-gradient(farthest-side at 133.33% 50%, #0000 52%, rgba(204, 156, 94, 0.68) 54% 57%, #0000 59%),
-    radial-gradient(farthest-side at 50% -33.33%, #0000 52%, rgba(204, 156, 94, 0.68) 54% 57%, #0000 59%), #091434;
-  background-size: calc(300px / 4.667) 300px, 300px calc(300px / 4.667);
+  background-image: radial-gradient(#b36529 2.5px, transparent 2.5px);
+  background-size: 100px 100px;
+  background-color: #0d1530;
 }
 header {
   position: fixed;
@@ -21,7 +20,7 @@ header {
   left: 0;
   width: 100%;
   padding: 20px 30px;
-  background: #162938;
+  background: #0d1530;
   display: flex;
   justify-content: space-between;
   z-index: 1;
@@ -264,7 +263,7 @@ header {
   height: 40px;
   left: 240px;
   top: 95px;
-  background-color: rgb(255, 255, 255, 0.9);
+  background-color: #0d1530;
 }
 .hashtag_container ul {
   padding-left: 40px;
@@ -280,7 +279,7 @@ header {
   font-size: 14px;
   line-height: 17px;
   text-align: center;
-  color: #8a8a8a;
+  color: #b36529;
 }
 .hashtag_container p {
   font-family: 'Barlow';
@@ -296,7 +295,7 @@ header {
   left: 0;
   width: 240px;
   height: 100vh;
-  background-color: #ffffff;
+  background-color: #0d1530;
   padding-top: 40px;
   padding-left: 20px;
 }
@@ -350,9 +349,11 @@ header {
   color: antiquewhite;
 }
 .item-page {
+  padding-top: 16px;
+  padding-left: 133px;
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: start;
   width: 100vw;
   height: 100%;
@@ -364,15 +365,15 @@ header {
   position: relative;
   border: 2px solid rgba(255, 255, 255, 0.5);
   width: 280px;
-  height: 360px;
+  height: 380px;
   border-radius: 25px;
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   -ms-border-radius: 25px;
   -o-border-radius: 25px;
   box-shadow: 0 1px 20px rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(9px);
-  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   display: flex;
   flex-direction: column;
   align-items: center;
