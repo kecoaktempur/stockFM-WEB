@@ -280,7 +280,7 @@ header {
   font-size: 14px;
   line-height: 17px;
   text-align: center;
-  color: #b36529;
+  color: #fff;
 }
 .hashtag_container p {
   font-family: 'Barlow';
@@ -289,6 +289,12 @@ header {
   font-size: 14px;
   line-height: 17px;
   text-align: center;
+}
+.hashtag_container button {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 16px;
 }
 .sidebar {
   position: absolute;
@@ -339,6 +345,10 @@ header {
 .text_container li {
   margin-top: 20px;
   cursor: pointer;
+  color: #fff;
+}
+.text_container i {
+  margin-right: 15px;
 }
 .item {
   position: relative;
@@ -366,19 +376,26 @@ header {
 .item-card {
   position: relative;
   border: 2px solid rgba(255, 255, 255, 0.5);
-  width: 280px;
+  max-width: 280px;
   height: 380px;
   border-radius: 25px;
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   -ms-border-radius: 25px;
   -o-border-radius: 25px;
-  box-shadow: 0 1px 20px rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+}
+.item-card:hover {
+  box-shadow: 0 1px 20px 5px rgba(255, 255, 255, 0.3);
 }
 .item-card button {
   color: #fff;
