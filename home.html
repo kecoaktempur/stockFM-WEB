@@ -9,85 +9,11 @@
     </title>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="https://kit.fontawesome.com/5ac7027fdd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="icon" type="image/x-icon" href="img/Logo cropped.png">
-    <link rel="stylesheet" href="css/index-style.css">
-    </script>
+    <link rel="stylesheet" href="css/home-not-login.css">
 </head>
 <body>
-    <div class="wrapper">
-        <span class="icon-close">
-            <ion-icon name="close"></ion-icon>
-        </span>
-        <div class="form-box login">
-            <h2>
-                <span>Login</span>
-            </h2>
-            <form action="#">
-                <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="mail"></ion-icon>
-                    </span>
-                    <input type="email" required>
-                    <label>Email</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="lock-closed"></ion-icon>
-                    </span>
-                    <input type="password" required>
-                    <label>Password</label>
-                </div>
-                <div class="remember-forgot">
-                    <label><input type="checkbox">Remember Me?</label>
-                    <a href="#">Forgot Password?</a>
-                </div>
-                <button type="submit" class="login-btn">Login</button>
-                <div class="login-register">
-                    <p> Don't have an account?
-                        <a class="register-link" href="#">Register</a>
-                    </p>
-                </div>
-            </form>
-        </div>
-        <div class="form-box register">
-            <h2>
-                <span>Registration</span>
-            </h2>
-            <form action="#">
-                <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="person"></ion-icon>
-                    </span>
-                    <input type="text" required>
-                    <label>Username</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="mail"></ion-icon>
-                    </span>
-                    <input type="email" required>
-                    <label>Email</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="lock-closed"></ion-icon>
-                    </span>
-                    <input type="password" required>
-                    <label>Password</label>
-                </div>
-                <div class="remember-forgot">
-                    <label><input type="checkbox">Agree to Terms & Conditions</label>
-                </div>
-                <button type="submit" class="login-btn">Register</button>
-                <div class="login-register">
-                    <p> Already have an account?
-                        <a class="login-link" href="#">Login</a>
-                    </p>
-                </div>
-            </form>
-        </div>
-    </div>
     <header>
         <a href="index.html">
             <img src="img/LogoWhite.png" alt="" , width="160" style="cursor: pointer;">
@@ -96,15 +22,13 @@
             <input type="text" class="searchterm" placeholder="Search items...">
         </div>
         <nav class="navbar">
-            <a href="home.html"> Our Product</a>
-            <a href="about-us.html">About Us</a>
-            <a href="#">Contact</a>
+            <i class="fa-solid fa-bell"></i>
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-circle-question"></i>
             <button class="btnLogin-popup">Login</button>
             <div class="sidebar">
                 <button class="add_product">
-                    <i>
                         <ion-icon name="add-outline"></ion-icon>
-                    </i>
                     <div class="text-place">
                         <h2>Add Product</h2>
                         <p>Add a Product here</p>
@@ -113,19 +37,15 @@
                 <div class="text_container">
                     <ul>
                         <li>
-                            <i class="fa-sharp fa-solid fa-list-ul"></i>
+                            <ion-icon name="grid-outline"></ion-icon>
                             Discover
                         </li>
                         <li>
-                            <i class="fa-regular fa-heart"></i>
-                            Wishlist
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-arrow-trend-up"></i>
+                            <ion-icon name="trending-up-outline"></ion-icon>
                             Trending
                         </li>
                         <li>
-                            <i class="fa-solid fa-arrow-up-wide-short"></i>
+                            <ion-icon name="list-outline"></ion-icon>
                             Category
                         </li>
                     </ul>
