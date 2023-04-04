@@ -2,7 +2,8 @@ const wrapper = document.querySelector('.wrapper');
 const loginLink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
 const btnPopup = document.querySelector('.btnLogin-popup');
-const btnClose = document.querySelector('.icon-close')
+const btnClose = document.querySelector('.icon-close');
+const drawer = document.querySelector('.profile-drawer');
 
 registerLink.addEventListener('click', ()=> {
     wrapper.classList.add('active');
@@ -19,6 +20,7 @@ btnPopup.addEventListener('click', ()=> {
 btnClose.addEventListener('click', ()=> {
     wrapper.classList.remove('active-popup');
 });
+
 
 const wankanan = document.getElementById('awan-kekanan');
 const wankiri = document.getElementById('awan-kekiri');
@@ -48,3 +50,9 @@ window.addEventListener('scroll', () => {
     triright.style.top = value*0.5 + 'px';
 });
 
+function openProfile() {
+    drawer.classList.add('active');
+}
+function closeProfile() {
+    drawer.classList.remove('active');
+}

@@ -12,8 +12,74 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="icon" type="image/x-icon" href="img/Logo cropped.png">
     <link rel="stylesheet" href="css/home.css">
+    <script>
+        function redirect() {
+            window.location.href="home-logged.html";
+        }
+    </script>
 </head>
 <body>
+    <div class="wrapper">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+    <div class="form-box login">
+        <h2>
+            <span>Login</span>
+        </h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required title="minimal 8 jing" minlength="8">
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label input type="checkbox">Remember Me?</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                    <button type="submit" class="login-btn" onclick="redirect()">Login</button>
+                <div class="login-register">
+                    <p> Don't have an account?
+                        <a class="register-link" href="#">Register</a>
+                    </p>
+                </div>
+            </form>
+    </div>
+    <div class="form-box register">
+        <h2>
+            <span>Registration</span>
+        </h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required minlength="8">
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Agree to Terms & Conditions</label>
+                </div>
+                <button type="submit" class="login-btn">Register</button>
+                <div class="login-register">
+                    <p> Already have an account?
+                        <a class="login-link" href="#">Login</a>
+                    </p>
+                </div>
+            </form>
+    </div>
+</div>
     <header>
         <a href="index.html">
             <img src="img/LogoWhite.png" alt="" , width="160" style="cursor: pointer;">
@@ -52,6 +118,7 @@
                 </div>
             </div>
             <div class="hashtag_container">
+                All tag
                 <ul>
                     <li>
                         <button>
