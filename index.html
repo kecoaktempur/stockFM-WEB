@@ -9,6 +9,11 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
     <title>Stock FM</title>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script>
+      function redirect() {
+          window.location.href="index-logged.html";
+      }
+  </script>
   </head>
   <body>
     <header>
@@ -31,19 +36,20 @@
         <form action="#">
           <div class="input-box">
             <span class="icon"><ion-icon name="mail"></ion-icon></span>
-            <input type="email" required />
+            <input type="email" required>
             <label>Email</label>
           </div>
           <div class="input-box">
             <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input type="password" required />
+            <input type="password" required minlength="8">
             <label>Password</label>
           </div>
           <div class="remember-forgot">
-            <label><input type="checkbox" />Remember Me?</label>
+            <label>
+              <input type="checkbox">Remember Me?</label>
             <a href="#">Forgot Password?</a>
           </div>
-          <button type="submit" class="login-btn">Login</button>
+          <button type="submit" class="login-btn" onclick="redirect()">Login</button>
           <div class="login-register">
             <p>
               Don't have an account?

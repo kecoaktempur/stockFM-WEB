@@ -1,11 +1,13 @@
-const wrapper = document.querySelector('.wrapper');
-const loginLink = document.querySelector('.login-link');
-const registerLink = document.querySelector('.register-link');
-const btnPopup = document.querySelector('.btnLogin-popup');
-const btnClose = document.querySelector('.icon-close');
-const drawer = document.querySelector('.profile-drawer');
 
-registerLink.addEventListener('click', ()=> {
+var wrapper = document.querySelector('.wrapper');
+var loginLink = document.querySelector('.login-link');
+var registerLink = document.querySelector('.register-link');
+var btnPopup = document.querySelector('.btnLogin-popup');
+var btnClose = document.querySelector('.icon-close');
+var drawer = document.querySelector('.profile-drawer');
+var navbar = document.querySelector('.navbar');
+
+registerLink.addEventListener('click', () => {
     wrapper.classList.add('active');
 });
 
@@ -22,12 +24,12 @@ btnClose.addEventListener('click', ()=> {
 });
 
 
-const wankanan = document.getElementById('awan-kekanan');
-const wankiri = document.getElementById('awan-kekiri');
-const factory = document.getElementById('factory');
-const floor = document.getElementById('floor-trees');
-const truck = document.getElementById('truck');
-const logo = document.getElementById('logoswipe');
+var wankanan = document.getElementById('awan-kekanan');
+var wankiri = document.getElementById('awan-kekiri');
+var factory = document.getElementById('factory');
+var floor = document.getElementById('floor-trees');
+var truck = document.getElementById('truck');
+var logo = document.getElementById('logoswipe');
 
 window.addEventListener('scroll', () => {
     let value = window.scrollY;
@@ -38,12 +40,12 @@ window.addEventListener('scroll', () => {
     wankiri.style.left = value*1.3 + 'px';
 });
 
-const trileft = document.getElementById('triangle-bg-left');
-const trimid = document.getElementById('triangle-bg-mid');
-const triright = document.getElementById('triangle-bg-right');
+var trileft = document.getElementById('triangle-bg-left');
+var trimid = document.getElementById('triangle-bg-mid');
+var triright = document.getElementById('triangle-bg-right');
 
 window.addEventListener('scroll', () => {
-    let value = window.scrollY;
+    var value = window.scrollY;
 
     trileft.style.top = value*0.3 + 'px';
     trimid.style.top = value*0.4 + 'px';
@@ -52,7 +54,9 @@ window.addEventListener('scroll', () => {
 
 function openProfile() {
     drawer.classList.add('active');
+    navbar.classList.add('active');
 }
 function closeProfile() {
     drawer.classList.remove('active');
+    navbar.classList.remove('active');
 }

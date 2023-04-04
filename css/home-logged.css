@@ -200,7 +200,7 @@ header {
   margin-right: 15px;
 }
 .profile-drawer {
-  top: 100px;
+  top: 0;
   z-index: 1;
   position: fixed;
   right: 0;
@@ -285,7 +285,7 @@ td i {
 }
 
 .tombol-edit button {
-  margin-top: 30px;
+  margin-top: 120px;
   font-family: Roboto, sans-serif;
   font-weight: 0;
   font-size: 14px;

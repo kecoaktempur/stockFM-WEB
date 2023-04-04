@@ -5,10 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="img/Logo cropped.png" />
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/index-logged.css" />
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
     <title>Stock FM</title>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script>
+      function logOut() {
+          window.location.href="index.html";
+      }
+    </script>
   </head>
   <body>
     <header>
@@ -19,76 +24,59 @@
         <a href="home.html">Product</a>
         <a href="about-us.html">About Us</a>
         <a href="">Contact</a>
-        <button class="btnLogin-popup">Login</button>
+        <img src="img/1.jpg" alt="#" onclick="openProfile()">
       </nav>
     </header>
-    <div class="wrapper">
-      <span class="icon-close"><ion-icon name="close"></ion-icon></span>
-      <div class="form-box login">
-        <h2>
-          <span>Login</span>
-        </h2>
-        <form action="#">
-          <div class="input-box">
-            <span class="icon"><ion-icon name="mail"></ion-icon></span>
-            <input type="email" required />
-            <label>Email</label>
-          </div>
-          <div class="input-box">
-            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input type="password" required />
-            <label>Password</label>
-          </div>
-          <div class="remember-forgot">
-            <label><input type="checkbox" />Remember Me?</label>
-            <a href="#">Forgot Password?</a>
-          </div>
-          <button type="submit" class="login-btn">Login</button>
-          <div class="login-register">
-            <p>
-              Don't have an account?
-              <a class="register-link" href="#">Register</a>
-            </p>
-          </div>
-        </form>
-      </div>
-      <div class="form-box register">
-        <h2>
-          <span>Registration</span>
-        </h2>
-        <form action="#">
-          <div class="input-box">
-            <span class="icon"><ion-icon name="person"></ion-icon></span>
-            <input type="text" required />
-            <label>Username</label>
-          </div>
-          <div class="input-box">
-            <span class="icon"><ion-icon name="mail"></ion-icon></span>
-            <input type="email" required />
-            <label>Email</label>
-          </div>
-          <div class="input-box">
-            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input type="password" required minlength="8" />
-            <label>Password</label>
-          </div>
-          <div class="input-box">
-            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input type="password" required minlength="8" />
-            <label>Confirm Password</label>
-          </div>
-          <div class="remember-forgot">
-            <label><input type="checkbox" />Agree to Terms & Conditions</label>
-          </div>
-          <button type="submit" class="login-btn">Register</button>
-          <div class="login-register">
-            <p>
-              Already have an account?
-              <a class="login-link" href="#">Login</a>
-            </p>
-          </div>
-        </form>
-      </div>
+    <div id="profile-drawer" class="profile-drawer">
+        <span class="icon-close" onclick="closeProfile(), closeProfile()"><ion-icon name="close"></ion-icon></span>
+        <div class="profile-card">
+            <img src="img/1.jpg" alt="#">
+            <h2>@Tetrey</h2>
+            <table>
+                <tr>
+                    <td>
+                        <i class="fa-solid fa-user fa-xl"></i>
+                    </td>
+                    <td>
+                        <p>Ferry Triwantono</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fa-solid fa-envelope fa-xl"></i>
+                    </td>
+                    <td>
+                        <p>Triwantono@gmail.com</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fa-solid fa-phone fa-xl"></i>
+                    </td>
+                    <td>
+                        <p>+62626262</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fa-solid fa-location-dot fa-xl"></i>
+                    </td>
+                    <td>
+                    <p>Gresik Raya</p>
+                    </td>
+                </tr>
+            </table>
+            <div class="tombol-edit">
+                <button>
+                    <a href="">Edit Profile</a>
+                </button>
+            </div>
+            <div class="tombol-keluar">
+                <button onclick="logOut()">
+                    <a href="home.html">Keluar</a>
+                </button>
+            </div>
+        </div>
     </div>
     <section class="parallax">
       <img src="img/awan-1.png" id="awan-kekanan" alt="#" style="transform: scale(0.7); top: -140px" />
