@@ -7,12 +7,7 @@
     font-family: 'Poppins', sans-serif;
 }
 body {
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-image: url();
-    background-size: cover;
-    background-position: center;
+    background-color: #0d1530;
 }
 header {
     position: fixed;
