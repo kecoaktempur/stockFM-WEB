@@ -98,8 +98,9 @@ header img {
     -moz-transition: transform .5s ease, height .2s ease;
     -ms-transition: transform .5s ease, height .2s ease;
     -o-transition: transform .5s ease, height .2s ease;
+    margin-left: 37%;
     z-index: 99;
-    top: 30vh;
+    top: 25vh;
 }
 .wrapper.active-popup {
     transform: scale(1);

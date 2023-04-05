@@ -94,8 +94,8 @@ header img {
   -o-transition: transform .5s ease, height .2s ease;
   z-index: 99;
   font-family: 'Poppins',cursive;
-  margin-top: 10%;
-  margin-left: 40%;
+  margin-top: 25vh;
+  margin-left: 37%;
 }
 .wrapper.active-popup {
   transform: scale(1);
