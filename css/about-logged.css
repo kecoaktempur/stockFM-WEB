@@ -60,7 +60,189 @@ header img {
     transform-origin: left;
     transform: scaleX(1);
 }
+.navbar img {
+    margin-left: 60px;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+}
+.profile-drawer {
+    top: 0;
+    z-index: 99;
+    position: fixed;
+    right: 0;
+    display: flex;
+    transition: all .5s;
+    transform: translateX(400px);
+    -webkit-transform: translateX(400px);
+    -moz-transform: translateX(400px);
+    -ms-transform: translateX(400px);
+    -o-transform: translateX(400px);
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+.profile-drawer.active {
+    transform: translateX(0);
+}
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20vw;
+    height: 100vh;
+    background-color: #091627;
+    border: 1px solid rgba(13, 6, 69, 0.325);
+    border-radius: 20px 0 0 20px;
+    box-shadow: 12px 9px 30px -9px #ffffff38;
+    -webkit-border-radius: 20px 0 0 20px;
+    -moz-border-radius: 20px 0 0 20px;
+    -ms-border-radius: 20px 0 0 20px;
+    -o-border-radius: 20px 0 0 20px;
+}
+.profile-drawer .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    z-index: 1;
+    cursor: pointer;
+}
+.profile-card img {
+    margin-top: 30px;
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.profile-card h2 {
+    margin-top: 10px;
+    margin-bottom: 60px;
+    color: bisque;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+.profile-card i {
+    color: burlywood;
+}
+.profile-card p {
+    color: burlywood;
+}
+td {
+    width: 50px;
+}
+tr {
+    height: 40px;
+}
+td i {
+    text-align: right;
+}
 
+.tombol-edit button {
+    margin-top: 120px;
+    font-family: Roboto, sans-serif;
+    font-weight: 0;
+    font-size: 14px;
+    color: #fff;
+    background-color: #b36529;
+    padding: 10px 30px;
+    border: 2px solid #b36529;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 50px;
+    transition: all .5s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+.tombol-edit button:hover {
+    background-color: transparent;
+    border: solid 2px #b36529;
+}
+.tombol-edit button:active {
+    transform: scale(.9);
+    -webkit-transform: scale(.9);
+    -moz-transform: scale(.9);
+    -ms-transform: scale(.9);
+    -o-transform: scale(.9);
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+}
+.tombol-keluar button {
+    margin-top: 30px;
+    font-family: Roboto, sans-serif;
+    font-weight: 0;
+    font-size: 14px;
+    color: #fff;
+    background-color: #b32929;
+    padding: 10px 30px;
+    border: 2px solid #b32929;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 50px;
+    transition: all .2s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+}
+
+.tombol-keluar button:hover {
+    transform: translateY(-0px);
+    background-color: transparent;
+    border: solid 2px #b32929;
+    -webkit-transform: translateY(-0px);
+    -moz-transform: translateY(-0px);
+    -ms-transform: translateY(-0px);
+    -o-transform: translateY(-0px);
+}
+.tombol-keluar button:active {
+    background-color: transparent;
+    border: solid 2px #b32929;
+    transform: scale(.9);
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    -webkit-transform: scale(.9);
+    -moz-transform: scale(.9);
+    -ms-transform: scale(.9);
+    -o-transform: scale(.9);
+}
+a {
+    text-decoration: none;
+    color: blanchedalmond;
+}
 .about {
     width: 100%;
     padding: 78px 0;

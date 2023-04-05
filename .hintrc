@@ -16,6 +16,13 @@
         "link-name": "off"
       }
     ],
-    "css-prefix-order": "off"
+    "css-prefix-order": "off",
+    "no-inline-styles": "off",
+    "axe/text-alternatives": [
+      "default",
+      {
+        "image-alt": "off"
+      }
+    ]
   }
 }
