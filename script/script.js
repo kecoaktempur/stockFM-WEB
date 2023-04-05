@@ -6,6 +6,11 @@ var btnPopup = document.querySelector('.btnLogin-popup');
 var btnClose = document.querySelector('.icon-close');
 var drawer = document.querySelector('.profile-drawer');
 var navbar = document.querySelector('.navbar');
+var login = document.querySelector('.login/reg');
+
+login.addEventListener('click', () => {
+    wrapper.classList.add('active');
+});
 
 registerLink.addEventListener('click', () => {
     wrapper.classList.add('active');
