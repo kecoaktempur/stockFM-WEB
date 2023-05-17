@@ -21,8 +21,17 @@
         <img src="img/LogoWhite.png" alt="" , width="160" style="cursor: pointer" />
       </a>
       <nav class="navbar">
-        <a href="home.html">Product</a>
-        <a href="about-us.html">About Us</a>
+        <a href="
+        <?php
+        Route::get('/', function () {
+            return view('storepage');
+        });?>"
+        >Product</a>
+        <a href="
+        <?php
+        Route::get('/', function () {
+            return view('about-us');
+        });?>">About Us</a>
         <a href="">Contact</a>
         <button class="btnLogin-popup">Login</button>
       </nav>
@@ -228,6 +237,6 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" type="text/javascript"></script>
-    <script src="script/script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
