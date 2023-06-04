@@ -30,6 +30,7 @@ class SessionController extends Controller
             }
     }
     public function logout() {
+        Auth::logout();
         return view('index');
     }
     public function create(Request $request) {

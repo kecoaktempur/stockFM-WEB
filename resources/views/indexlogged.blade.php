@@ -73,8 +73,10 @@
                 </button>
             </div>
             <div class="tombol-keluar">
-                <button action="/logout" method="GET"> Keluar
-                </button>
+                <a href="{{ url('/logout')}}" method="GET">
+                    <button> Keluar
+                    </button>
+                </a>
             </div>
         </div>
     </div>
