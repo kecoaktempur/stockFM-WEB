@@ -73,7 +73,7 @@
                 </button>
             </div>
             <div class="tombol-keluar">
-                <button onclick="logOut()"> Keluar
+                <button action="/logout" method="GET"> Keluar
                 </button>
             </div>
         </div>
@@ -210,6 +210,6 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" type="text/javascript"></script>
-    <script src="script/script-logged.js"></script>
+    <script src="js/script-logged.js"></script>
   </body>
 </html>

@@ -2,34 +2,53 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Http\Controllers\SessionController;
-
-Route::resource('Session', SessionController::class);
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class SessionController extends Controller
 {
     public function index() {
-        return view('session.index');
-    }
-    public function create() {
-        return view('session.create');
+        return view('index');
     }
     public function login(Request $request) {
+        Session::flash('email', $request->email);
         $request->validate([
-            'email' => 'required|email',
+            'email' => 'required',
             'password' => 'required'
             ]);
+            $infologin = [
+                'email' => $request->email,
+                'password' => $request->password,
+            ];
+            if (Auth::attempt($infologin)) {
+                return view('indexlogged');
+            } else {
+                return redirect('/')->withErrors('Username atau password yang anda masukkan salah');
+            }
     }
-    public function store(Request $request) {
+    public function logout() {
+        return view('index');
+    }
+    public function create(Request $request) {
+        Session::flash('username', $request->username);
+        Session::flash('email', $request->email);
         $request->validate([
-            'username' => 'required',
-            'email' => 'required',
-            'password' => 'required',
+            'username' => 'required|unique:users',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:8'
         ]);
 
-        Account::create($request->post());
+        $data = [
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => bcrypt($request->password)
+        ];
 
-        return redirect()->route('session.index')->with('success','Account Created Successfully.');
+        User::create($data);
+        return view('index');
     }
     public function show(Account $account) {
         return view('session.show', compact('account'));

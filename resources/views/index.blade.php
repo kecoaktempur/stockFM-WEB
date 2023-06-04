@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,88 +10,88 @@
     <title>Stock FM</title>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script>
-      function redirect() {
-          window.location.href="index-logged.html";
-      }
-  </script>
-  </head>
-  <body>
+        function redirect() {
+            window.location.href="index-logged.html";
+        }
+    </script>
+</head>
+<body>
     <header>
-      <a href="index.html">
-        <img src="img/LogoWhite.png" alt="" , width="160" style="cursor: pointer" />
-      </a>
-      <nav class="navbar">
-        <a href="
-        <?php
+        <a href="index.html">
+            <img src="img/LogoWhite.png" alt="" , width="160" style="cursor: pointer" />
+        </a>
+        <nav class="navbar">
+            <a href="{{ url('storepage') }}"
+            >Product</a>
+            <a href="
+            <?php
         Route::get('/', function () {
-            return view('storepage');
-        });?>"
-        >Product</a>
-        <a href="
-        <?php
-        Route::get('/', function () {
-            return view('about-us');
+            return redirect()->route('indexlogged');
         });?>">About Us</a>
         <a href="">Contact</a>
         <button class="btnLogin-popup">Login</button>
-      </nav>
-    </header>
-    <div class="wrapper">
-      <span class="icon-close"><ion-icon name="close"></ion-icon></span>
-      <div class="form-box login">
+    </nav>
+</header>
+<div class="wrapper" id="loginModal">
+    <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+    <div class="form-box login">
         <h2>
-          <span>Login</span>
+            <span>Login</span>
         </h2>
-        <form action="#">
-          <div class="input-box">
+        <form action="/login" method="POST">
+            @csrf
+            <div class="input-box">
             <span class="icon"><ion-icon name="mail"></ion-icon></span>
-            <input type="email" required>
-            <label>Email</label>
-          </div>
-          <div class="input-box">
+            <input type="email" name="email" required>
+            <label for="email" >Email</label>
+        </div>
+        <div class="input-box">
             <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input type="password" required minlength="8">
-            <label>Password</label>
-          </div>
-          <div class="remember-forgot">
+            <input type="password" name="password" required minlength="8">
+            <label for="password" >Password</label>
+        </div>
+        <div class="remember-forgot">
             <label>
-              <input type="checkbox">Remember Me?</label>
-            <a href="#">Forgot Password?</a>
-          </div>
-          <button type="submit" class="login-btn" onclick="redirect()">Login</button>
-          <div class="login-register">
-            <p>
-              Don't have an account?
-              <a class="register-link" href="#">Register</a>
-            </p>
-          </div>
+                <input type="checkbox">{{__('Remember Me?')}}</label>
+                @if (Route::has('password.request'))
+                <a href="#">{{__('Forgot Password?')}}</a>
+                @endif
+            </div>
+            <button name="submit" type="submit" class="login-btn">Login</button>
+            <div class="login-register">
+                <p>
+                    Don't have an account?
+                    <a class="register-link" href="#">Register</a>
+                </p>
+            </div>
         </form>
-      </div>
-      <div class="form-box register">
+    </div>
+    <div class="form-box register">
         <h2>
-          <span>Registration</span>
+            <span>Registration</span>
         </h2>
-        <form action="#">
-          <div class="input-box">
-            <span class="icon"><ion-icon name="person"></ion-icon></span>
-            <input type="text" required />
-            <label>Username</label>
-          </div>
-          <div class="input-box">
-            <span class="icon"><ion-icon name="mail"></ion-icon></span>
-            <input type="email" required />
-            <label>Email</label>
-          </div>
-          <div class="input-box">
-            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input type="password" required minlength="8" />
-            <label>Password</label>
-          </div>
-          <div class="input-box">
-            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-            <input type="password" required minlength="8" />
-            <label>Confirm Password</label>
-          </div>
+        <form action="/create" method="POST">
+            @csrf
+            <div class="input-box">
+                <span class="icon"><ion-icon name="person"></ion-icon></span>
+                <input name="username" value="{{ Session::get('username') }}" type="text" required />
+                <label>Username</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                <input name="email" value="{{ Session::get('email') }}" type="email" required />
+                <label>Email</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                <input name="password" type="password" required minlength="8" />
+                <label>Password</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                <input name="password" type="password" required minlength="8" />
+                <label>Confirm Password</label>
+            </div>
           <div class="remember-forgot">
             <label><input type="checkbox" />Agree to Terms & Conditions</label>
           </div>
@@ -230,13 +230,13 @@
               <a href=""><ion-icon name="logo-instagram"></ion-icon></a>
               <a href=""><ion-icon name="logo-github"></ion-icon></a>
             </div>
-          </div>
+            </div>
         </div>
-      </div>
+    </div>
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" type="text/javascript"></script>
     <script src="js/script.js"></script>
-  </body>
+</body>
 </html>
