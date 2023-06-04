@@ -9,11 +9,6 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
     <title>Stock FM</title>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script>
-        function redirect() {
-            window.location.href="index-logged.html";
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -21,13 +16,8 @@
             <img src="img/LogoWhite.png" alt="" , width="160" style="cursor: pointer" />
         </a>
         <nav class="navbar">
-            <a href="{{ url('storepage') }}"
-            >Product</a>
-            <a href="
-            <?php
-        Route::get('/', function () {
-            return redirect()->route('indexlogged');
-        });?>">About Us</a>
+            <a href="{{ url('/storepage') }}" method="GET">Product</a>
+            <a href="{{ url('/about-us') }}" method="GET">About Us</a>
         <a href="">Contact</a>
         <button class="btnLogin-popup">Login</button>
     </nav>

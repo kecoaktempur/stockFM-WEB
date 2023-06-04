@@ -26,7 +26,7 @@ class SessionController extends Controller
             if (Auth::attempt($infologin)) {
                 return view('indexlogged');
             } else {
-                return redirect('/')->withErrors('Username atau password yang anda masukkan salah');
+                return redirect('index')->withErrors('Username atau password yang anda masukkan salah');
             }
     }
     public function logout() {
@@ -70,5 +70,11 @@ class SessionController extends Controller
     public function destroy(Account $account) {
         $account->delete();
         return redirect()->route('session.index')->with('success', 'Account Deleted Successfully.');
+    }
+    public function storepage() {
+        return view('storepage');
+    }
+    public function aboutus() {
+        return view('about-us');
     }
 }

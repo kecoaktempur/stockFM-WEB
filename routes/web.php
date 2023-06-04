@@ -19,3 +19,5 @@ Route::post('/login', [SessionController::class, 'login'])->name('login');
 Route::get('/logout', [SessionController::class, 'logout'])->name('logout');
 
 Route::post('/create', [SessionController::class, 'create'])->name('create');
+
+Route::get('/storepage', [SessionController::class, 'storepage']);
