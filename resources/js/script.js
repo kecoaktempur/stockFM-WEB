@@ -60,3 +60,4 @@ function closeProfile() {
     drawer.classList.remove('active');
     navbar.classList.remove('active');
 }
+

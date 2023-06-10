@@ -82,18 +82,18 @@
                 <input name="password" type="password" required minlength="8" />
                 <label>Confirm Password</label>
             </div>
-          <div class="remember-forgot">
+            <div class="remember-forgot">
             <label><input type="checkbox" />Agree to Terms & Conditions</label>
-          </div>
-          <button type="submit" class="login-btn">Register</button>
-          <div class="login-register">
-            <p>
-              Already have an account?
-              <a class="login-link" href="#">Login</a>
-            </p>
-          </div>
+            </div>
+            <button type="submit" class="login-btn">Register</button>
+            <div class="login-register">
+                <p>
+                    Already have an account?
+                    <a class="login-link" href="#">Login</a>
+                </p>
+            </div>
         </form>
-      </div>
+    </div>
     </div>
     <section class="parallax">
       <img src="img/awan-1.png" id="awan-kekanan" alt="#" style="transform: scale(0.7); top: -140px" />

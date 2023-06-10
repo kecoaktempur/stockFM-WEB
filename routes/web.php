@@ -21,3 +21,4 @@ Route::get('/logout', [SessionController::class, 'logout'])->name('logout');
 Route::post('/create', [SessionController::class, 'create'])->name('create');
 
 Route::get('/storepage', [SessionController::class, 'storepage']);
+Route::get('/about-us', [SessionController::class, 'aboutus']);

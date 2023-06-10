@@ -25,13 +25,13 @@
         <a href="home-logged.html">Product</a>
         <a href="about-us-logged.html">About Us</a>
         <a href="">Contact</a>
-        <img src="img/1.jpg" alt="#" onclick="openProfile()">
+        <img src="storages/profile_pictures/avatar.png" alt="#" onclick="openProfile()">
       </nav>
     </header>
     <div id="profile-drawer" class="profile-drawer">
         <span class="icon-close" onclick="closeProfile()"><ion-icon name="close"></ion-icon></span>
         <div class="profile-card">
-            <img src="img/1.jpg" alt="#">
+            <img src="storages/profile_pictures/avatar.png" alt="#">
             <h2>@Tetrey</h2>
             <table>
                 <tr>
@@ -213,5 +213,6 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" type="text/javascript"></script>
     <script src="js/script-logged.js"></script>
+    <script src="js/profileupdate.js"></script>
   </body>
 </html>
