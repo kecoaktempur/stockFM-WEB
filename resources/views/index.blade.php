@@ -64,12 +64,12 @@
             @csrf
             <div class="input-box">
                 <span class="icon"><ion-icon name="person"></ion-icon></span>
-                <input name="username" value="{{ Session::get('username') }}" type="text" required />
+                <input name="username" type="text" required />
                 <label>Username</label>
             </div>
             <div class="input-box">
                 <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                <input name="email" value="{{ Session::get('email') }}" type="email" required />
+                <input name="email" type="email" required />
                 <label>Email</label>
             </div>
             <div class="input-box">

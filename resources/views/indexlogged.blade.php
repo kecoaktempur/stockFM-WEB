@@ -22,8 +22,8 @@
         <img src="img/LogoWhite.png" alt="" , width="160" style="cursor: pointer" />
       </a>
       <nav class="navbar">
-        <a href="home-logged.html">Product</a>
-        <a href="about-us-logged.html">About Us</a>
+        <a href="{{ url('/sesi/storepage-logged')}}">Product</a>
+        <a href="{{ url('/about-us-logged')}}">About Us</a>
         <a href="">Contact</a>
         <img src="storage/profile_pictures/avatar.png" alt="#" onclick="openProfile()">
       </nav>
@@ -69,7 +69,7 @@
             </table>
             <div class="tombol-edit">
                 <button>
-                    <a href="{{ route('updateprofile')}}">Edit Profile</a>
+                    <a href="{{ url('/auth/updateprofile')}}">Edit Profile</a>
                 </button>
             </div>
             <div class="tombol-keluar">
@@ -213,6 +213,5 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" type="text/javascript"></script>
     <script src="js/script-logged.js"></script>
-    <script src="js/profileupdate.js"></script>
   </body>
 </html>

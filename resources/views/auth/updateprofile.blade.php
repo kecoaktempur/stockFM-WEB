@@ -4,23 +4,27 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="img/Logo cropped.png">
-    <link rel="stylesheet" href="css/update.css">
+    <link rel="icon" type="image/x-icon" href="/img/Logo cropped.png">
+    <link rel="stylesheet" href="/css/update.css">
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700&display=swap" rel="stylesheet">
-    <title>Product Card</title>
+    <title>Profile Settings</title>
 </head>
 <body>
     <div class="container">
         <div class="card">
             <div class="itemBackground">
+                <img src="/storage/profile_pictures/avatar.png" class="item show" width="250" id="image_preview_container">
+                <span class="image-input">
+                    <input type="file" name="profile_pict" id="profile_pict" class="form-control">
+                </span>
                 <div class="gradients">
                     <div class="gradient second" color="blue"></div>
                 </div>
                 <h1 class="nike">STOCK</h1>
-                <img src="img/logo.png" alt="" class="logo">
+                <img src="/img/logo.png" alt="" class="logo">
             </div>
-            <form action="/updateprofile" method="POST" class="info">
+            <form action="/profileupdate" method="POST" class="info">
                 @csrf
                 <div class="itemName">
                     <div>
@@ -52,11 +56,11 @@
                     </div>
                 </div>
                 <div class="buy-price">
-                    <a href="#" class="buy">Save Changes</a>
+                    <button href="#" class="buy" type="submit">Save Changes</button>
                 </div>
             </form>
         </div>
     </div>
-    <script src="script/product.js"></script>
+    <script src="/js/profileupdate.js"></script>
 </body>
 </html>

@@ -140,20 +140,22 @@ body{
 
 .item{
     position: absolute;
-    width: 140%;
-    opacity: 0;
-    bottom: 0;
+    bottom: 40px;
     right: 0;
-    transform: rotate(-20deg);
     transition: .5s;
 }
 
 .item.show{
     opacity: 1;
-    width: 100%;
+    width: 350px;
     margin-right: 150px;
 }
-
+.form-control {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 99;
+}
 .info{
     width: 50%;
     background-color: #0d1530;

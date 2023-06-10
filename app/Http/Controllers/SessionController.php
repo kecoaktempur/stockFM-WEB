@@ -7,6 +7,7 @@ use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class SessionController extends Controller
 {
@@ -51,7 +52,7 @@ class SessionController extends Controller
         User::create($data);
         return view('index');
     }
-    public function update(Request $request) {
+    public function update() {
         return view('auth/updateprofile');
     }
     public function profileupdate(Request $request) {
@@ -64,34 +65,15 @@ class SessionController extends Controller
             'location' => ['required', 'string', 'max:255']
         ]);
 
-        if (auth()->user()->profile_picture == null) {
-            $validate_pict = Validator::make($request->all(), [
-                'profile_pict' => ['required', 'image', 'max:1000']
-            ]);
-             # check if their is any error in image validation
-            if ($validate_pict->fails()) {
-                return response()->json(['code' => 400, 'msg' => $validate_pict->errors()->first()]);
-        }
-    }
-    if ($validated->fails()) {
-        return response()->json(['code' => 400, 'msg' => $validated->errors()->first()]);
-    }
-    if ($request->hasFile('profile_pict')) {
-        $pictPath = 'storage/'.auth()->user()->profile_pict;
-        if (File::exists($pictPath)) {
-            File::delete($pictPath);
-        }
-        $profile_pict = $request->profile_pict->store('profile_pict', 'public');
-    }
-    auth()->user()->update([
+    $updatedata = [
         'name' => $request->name,
         'phone' => $request->phone,
         'location' => $request->location,
         'address' => $request->address,
         'profile_pict' => $profile_pict ?? auth()->user()->profile_pict
-    ]);
-    return response()->json(['code' => 200, 'msg' => 'profile updated successfully.']);
-    return redirect()->back();
+    ];
+    auth()->user()->save($updatedata);
+    return 'coba update';
     }
     public function destroy(Account $account) {
         $account->delete();

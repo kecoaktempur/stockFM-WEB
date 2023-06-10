@@ -15,13 +15,15 @@ use App\Http\Controllers\SessionController;
 */
 
 Route::get('/', [SessionController::class,'index']);
-Route::post('/login', [SessionController::class, 'login'])->name('login');
-Route::get('/logout', [SessionController::class, 'logout'])->name('logout');
+Route::post('login', [SessionController::class, 'login'])->name('login');
+Route::get('logout', [SessionController::class, 'logout'])->name('logout');
 
-Route::post('/create', [SessionController::class, 'create'])->name('create');
+Route::post('create', [SessionController::class, 'create'])->name('create');
 
-Route::get('/storepage', [SessionController::class, 'storepage']);
-Route::get('/about-us', [SessionController::class, 'aboutus']);
+Route::get('storepage', [SessionController::class, 'storepage']);
+Route::get('about-us', [SessionController::class, 'aboutus']);
 
-Route::get('goupdate', [SessionController::class, 'update'])->name('goupdate');
-Route::post('updateprofile', [SessionController::class, 'updateprofile']);
+Route::get('update', function () {
+    return view('/auth/updateprofile');
+});
+Route::post('profileupdate', [SessionController::class, 'profileupdate'])->name('profileupdate');
