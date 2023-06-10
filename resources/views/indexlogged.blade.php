@@ -25,21 +25,21 @@
         <a href="home-logged.html">Product</a>
         <a href="about-us-logged.html">About Us</a>
         <a href="">Contact</a>
-        <img src="storages/profile_pictures/avatar.png" alt="#" onclick="openProfile()">
+        <img src="storage/profile_pictures/avatar.png" alt="#" onclick="openProfile()">
       </nav>
     </header>
     <div id="profile-drawer" class="profile-drawer">
         <span class="icon-close" onclick="closeProfile()"><ion-icon name="close"></ion-icon></span>
         <div class="profile-card">
-            <img src="storages/profile_pictures/avatar.png" alt="#">
-            <h2>@Tetrey</h2>
+            <img src="storage/profile_pictures/avatar.png" alt="#">
+            <h2>@ {{ auth()->user()->username}}</h2>
             <table>
                 <tr>
                     <td>
                         <i class="fa-solid fa-user fa-xl"></i>
                     </td>
                     <td>
-                        <p>Ferry Triwantono</p>
+                        <p>{{ auth()->user()->fullname}}</p>
                     </td>
                 </tr>
                 <tr>
@@ -47,7 +47,7 @@
                         <i class="fa-solid fa-envelope fa-xl"></i>
                     </td>
                     <td>
-                        <p>Triwantono@gmail.com</p>
+                        <p>{{ auth()->user()->email}}</p>
                     </td>
                 </tr>
                 <tr>
@@ -55,7 +55,7 @@
                         <i class="fa-solid fa-phone fa-xl"></i>
                     </td>
                     <td>
-                        <p>+62626262</p>
+                        <p>{{ auth()->user()->phone}}</p>
                     </td>
                 </tr>
                 <tr>
@@ -63,13 +63,13 @@
                         <i class="fa-solid fa-location-dot fa-xl"></i>
                     </td>
                     <td>
-                    <p>Gresik Raya</p>
+                    <p>{{ auth()->user()->location}}</p>
                     </td>
                 </tr>
             </table>
             <div class="tombol-edit">
                 <button>
-                    <a href="">Edit Profile</a>
+                    <a href="{{ route('updateprofile')}}">Edit Profile</a>
                 </button>
             </div>
             <div class="tombol-keluar">

@@ -22,3 +22,6 @@ Route::post('/create', [SessionController::class, 'create'])->name('create');
 
 Route::get('/storepage', [SessionController::class, 'storepage']);
 Route::get('/about-us', [SessionController::class, 'aboutus']);
+
+Route::get('goupdate', [SessionController::class, 'update'])->name('goupdate');
+Route::post('updateprofile', [SessionController::class, 'updateprofile']);

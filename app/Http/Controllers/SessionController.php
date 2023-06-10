@@ -51,13 +51,11 @@ class SessionController extends Controller
         User::create($data);
         return view('index');
     }
-    public function show(Account $account) {
-        return view('session.show', compact('account'));
+    public function update(Request $request) {
+        return view('auth/updateprofile');
     }
-    public function edit(Account $account) {
-        return view('session.edit', compact('account'));
-    }
-    public function update(Request $request, Account $account) {
+    public function profileupdate(Request $request) {
+
         $validate = Validator::make($request->all(), [
             'username' => ['required', 'string', 'max:255'],
             'fullname' => ['required', 'string', 'max:255'],
@@ -67,32 +65,34 @@ class SessionController extends Controller
         ]);
 
         if (auth()->user()->profile_picture == null) {
-            $validate_image = Validator::make($request->all(), [
+            $validate_pict = Validator::make($request->all(), [
                 'profile_pict' => ['required', 'image', 'max:1000']
             ]);
              # check if their is any error in image validation
             if ($validate_pict->fails()) {
-                return response()->json(['code' => 400, 'msg' => $validate_image->errors()->first()]);
+                return response()->json(['code' => 400, 'msg' => $validate_pict->errors()->first()]);
         }
     }
     if ($validated->fails()) {
         return response()->json(['code' => 400, 'msg' => $validated->errors()->first()]);
     }
     if ($request->hasFile('profile_pict')) {
-        $imagePath = 'storage/'.auth()->user()->profile_pict;
-        if (File::exists($imagePath)) {
-            File::delete($imagePath);
+        $pictPath = 'storage/'.auth()->user()->profile_pict;
+        if (File::exists($pictPath)) {
+            File::delete($pictPath);
         }
-        $profile_image = $request->profile_image->store('profile_pict', 'public');
+        $profile_pict = $request->profile_pict->store('profile_pict', 'public');
     }
     auth()->user()->update([
         'name' => $request->name,
         'phone' => $request->phone,
+        'location' => $request->location,
         'address' => $request->address,
-        'profile_image' => $profile_image ?? auth()->user()->profile_image
+        'profile_pict' => $profile_pict ?? auth()->user()->profile_pict
     ]);
     return response()->json(['code' => 200, 'msg' => 'profile updated successfully.']);
-}
+    return redirect()->back();
+    }
     public function destroy(Account $account) {
         $account->delete();
         return redirect()->route('session.index')->with('success', 'Account Deleted Successfully.');
