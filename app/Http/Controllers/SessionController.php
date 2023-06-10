@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Validator;
 class SessionController extends Controller
 {
     public function index() {
-        return view('index');
+        return view('sesi.homepage');
     }
     public function login(Request $request) {
         Session::flash('email', $request->email);
@@ -25,14 +25,15 @@ class SessionController extends Controller
                 'password' => $request->password,
             ];
             if (Auth::attempt($infologin)) {
-                return view('indexlogged');
+                return view('sesi.homepage');
             } else {
-                return view('index')->withErrors('Username atau password yang anda masukkan salah');
+                return view('sesi.homepage')->withErrors('Username atau password yang anda masukkan salah');
             }
     }
     public function logout() {
         Auth::logout();
-        return view('index');
+        Session::flush();
+        return view('sesi.homepage');
     }
     public function create(Request $request) {
         Session::flash('username', $request->username);
@@ -50,12 +51,12 @@ class SessionController extends Controller
         ];
 
         User::create($data);
-        return view('index');
+        return view('sesi.homepage');
     }
     public function update() {
         return view('auth/updateprofile');
     }
-    public function profileupdate(Request $request) {
+    public function profileupdate(User $update, Request $request) {
 
         $validate = Validator::make($request->all(), [
             'username' => ['required', 'string', 'max:255'],
@@ -65,24 +66,25 @@ class SessionController extends Controller
             'location' => ['required', 'string', 'max:255']
         ]);
 
-    $updatedata = [
-        'name' => $request->name,
+    $update = [
+        'username' => $request->username,
+        'fullname' => $request->fullname,
         'phone' => $request->phone,
         'location' => $request->location,
         'address' => $request->address,
         'profile_pict' => $profile_pict ?? auth()->user()->profile_pict
     ];
-    auth()->user()->save($updatedata);
-    return 'coba update';
+    auth()->user()->update($update);
+    return view('/sesi/homepage');
     }
     public function destroy(Account $account) {
         $account->delete();
         return redirect()->route('session.index')->with('success', 'Account Deleted Successfully.');
     }
     public function storepage() {
-        return view('storepage');
+        return view('sesi.storepage');
     }
     public function aboutus() {
-        return view('about-us');
+        return view('sesi.about-us');
     }
 }

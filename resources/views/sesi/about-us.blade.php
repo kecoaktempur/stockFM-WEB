@@ -23,7 +23,11 @@
             <a href="home.html">Product</a>
             <a href="about-us.html">About Us</a>
             <a href="#">Contact</a>
-            <button class="btnLogin-popup">Login</button>
+            @if (Auth::check())
+        <img src="storage/profile_pictures/avatar.png" alt="#" onclick="openProfile()">
+        @else
+        <button class="btnLogin-popup">Login</button>
+        @endif
         </nav>
     </header>
     <section class="about">

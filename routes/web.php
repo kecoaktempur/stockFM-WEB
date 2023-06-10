@@ -14,7 +14,7 @@ use App\Http\Controllers\SessionController;
 |
 */
 
-Route::get('/', [SessionController::class,'index']);
+Route::get('/', [SessionController::class,'index'])->name('index');
 Route::post('login', [SessionController::class, 'login'])->name('login');
 Route::get('logout', [SessionController::class, 'logout'])->name('logout');
 
@@ -26,4 +26,5 @@ Route::get('about-us', [SessionController::class, 'aboutus']);
 Route::get('update', function () {
     return view('/auth/updateprofile');
 });
+
 Route::post('profileupdate', [SessionController::class, 'profileupdate'])->name('profileupdate');

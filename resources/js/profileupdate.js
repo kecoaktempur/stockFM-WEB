@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     // image preview
     $("#profile_pict").change(function(){
-        var reader = new FileReader();
+        let reader = new FileReader();
 
         reader.onload = (e) => {
             $("#image_preview_container").attr('src', e.target.result);
@@ -13,7 +13,7 @@ $(document).ready(function(){
     $("#profile_setup_frm").submit(function(e){
         e.preventDefault();
 
-        var formData = new FormData(this);
+        let formData = new FormData(this);
 
         $.ajaxSetup({
             headers: {

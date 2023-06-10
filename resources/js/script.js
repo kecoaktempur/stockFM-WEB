@@ -61,3 +61,14 @@ function closeProfile() {
     navbar.classList.remove('active');
 }
 
+var drawer = document.querySelector('.profile-drawer');
+var navbar = document.querySelector('.navbar');
+
+function openProfile() {
+    drawer.classList.add('active');
+    navbar.classList.add('active');
+}
+function closeProfile() {
+    drawer.classList.remove('active');
+    navbar.classList.remove('active');
+}

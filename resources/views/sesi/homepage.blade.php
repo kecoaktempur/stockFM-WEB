@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="img/Logo cropped.png" />
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
     <title>Stock FM</title>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -16,12 +17,72 @@
             <img src="img/LogoWhite.png" alt="" , width="160" style="cursor: pointer" />
         </a>
         <nav class="navbar">
-            <a href="{{ url('/storepage') }}" method="GET">Product</a>
-            <a href="{{ url('/about-us') }}" method="GET">About Us</a>
+            <a href="{{ url('/storepage') }}">Product</a>
+            <a href="{{ url('/about-us') }}">About Us</a>
         <a href="">Contact</a>
+        @if (Auth::check())
+        <img src="storage/profile_pictures/avatar.png" alt="#" onclick="openProfile()">
+        @else
         <button class="btnLogin-popup">Login</button>
+        @endif
     </nav>
 </header>
+@if (Auth::check())
+
+<div id="profile-drawer" class="profile-drawer">
+    <span class="icon-close" onclick="closeProfile()"><ion-icon name="close"></ion-icon></span>
+    <div class="profile-card">
+        <img src="storage/profile_pictures/avatar.png" alt="#">
+        <h2>@ {{ auth()->user()->username}}</h2>
+        <table>
+            <tr>
+                <td>
+                    <i class="fa-solid fa-user fa-xl"></i>
+                </td>
+                <td>
+                    <p>{{ auth()->user()->fullname}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <i class="fa-solid fa-envelope fa-xl"></i>
+                </td>
+                <td>
+                    <p>{{ auth()->user()->email}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <i class="fa-solid fa-phone fa-xl"></i>
+                </td>
+                <td>
+                    <p>{{ auth()->user()->phone}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <i class="fa-solid fa-location-dot fa-xl"></i>
+                </td>
+                <td>
+                <p>{{ auth()->user()->location}}</p>
+                </td>
+            </tr>
+        </table>
+        <div class="tombol-edit">
+            <button>
+                <a href="/update">Edit Profile</a>
+            </button>
+        </div>
+        <div class="tombol-keluar">
+            <a href="/logout">
+                <button> Keluar
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+@else
+
 <div class="wrapper" id="loginModal">
     <span class="icon-close"><ion-icon name="close"></ion-icon></span>
     <div class="form-box login">
@@ -95,6 +156,7 @@
         </form>
     </div>
     </div>
+@endif
     <section class="parallax">
       <img src="img/awan-1.png" id="awan-kekanan" alt="#" style="transform: scale(0.7); top: -140px" />
       <img src="img/awan-2.png" id="awan-kekiri" alt="#" style="transform: scale(0.7); top: -140px" />

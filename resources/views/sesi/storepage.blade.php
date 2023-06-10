@@ -91,7 +91,11 @@
             <i class="fa-solid fa-bell"></i>
             <i class="fa-regular fa-heart"></i>
             <i class="fa-solid fa-circle-question"></i>
+            @if (Auth::check())
+            <img src="storage/profile_pictures/avatar.png" alt="#" onclick="openProfile()">
+            @else
             <button class="btnLogin-popup">Login</button>
+            @endif
             <div class="sidebar">
                 <button class="add_product">
                         <ion-icon name="add-outline"></ion-icon>
