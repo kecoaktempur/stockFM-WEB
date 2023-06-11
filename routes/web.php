@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,16 +14,17 @@ use App\Http\Controllers\SessionController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// Home
+Route::get('/', [PageController::class,'home']);
 
-Route::get('/home', [SessionController::class,'home'])->name('home');
+// Login Regist Logout
 Route::post('login', [SessionController::class, 'login']);
 Route::get('logout', [SessionController::class, 'logout']);
-
 Route::post('create', [SessionController::class, 'create']);
 
-Route::get('storepage', [SessionController::class, 'storepage']);
-Route::get('about-us', [SessionController::class, 'aboutus']);
-
+//Pagging
+Route::get('storepage', [PageController::class, 'storepage']);
+Route::get('about-us', [PageController::class, 'aboutus']);
 Route::get('/update', function () {
     return view('/auth/updateprofile');
 });

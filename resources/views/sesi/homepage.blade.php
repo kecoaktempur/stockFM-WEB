@@ -17,8 +17,8 @@
             <img src="img/LogoWhite.png" alt="" , width="160" style="cursor: pointer" />
         </a>
         <nav class="navbar">
-            <a href="{{ url('/storepage') }}">Product</a>
-            <a href="{{ url('/about-us') }}">About Us</a>
+            <a href="{{ url('storepage') }}">Product</a>
+            <a href="{{ url('about-us') }}">About Us</a>
         <a href="">Contact</a>
         @if (Auth::check())
             @if (auth()->user()->profile_pict != null)

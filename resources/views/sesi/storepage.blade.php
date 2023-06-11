@@ -69,7 +69,6 @@
         </div>
     </div>
     @else
-
     <div class="wrapper" id="loginModal">
         <span class="icon-close"><ion-icon name="close"></ion-icon></span>
         <div class="form-box login">
@@ -183,13 +182,13 @@
             <button class="btnLogin-popup">Login</button>
             @endif
             <div class="sidebar">
-                <button class="add_product">
+                <a class="add_product" href="{{ url('admin/addproduct') }}">
                         <ion-icon name="add-outline"></ion-icon>
-                    <div class="text-place">
+                        <div class="text-place">
                         <h2>Add Product</h2>
                         <p>Add a Product here</p>
                     </div>
-                </button>
+                </a>
                 <div class="text_container">
                     <ul>
                         <li>

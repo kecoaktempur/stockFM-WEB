@@ -9,9 +9,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
-class SessionController extends Controller {
+class SessionController extends Controller
+{
     public function index() {
-        return view('/sesi/homepage');
+        return view('sesi/homepage');
     }
     public function login(Request $request) {
         Session::flash('email', $request->email);
@@ -85,11 +86,5 @@ class SessionController extends Controller {
     public function destroy(Account $account) {
         $account->delete();
         return redirect()->route('session.index')->with('success', 'Account Deleted Successfully.');
-    }
-    public function storepage() {
-        return view('sesi.storepage');
-    }
-    public function aboutus() {
-        return view('sesi.about-us');
     }
 }
