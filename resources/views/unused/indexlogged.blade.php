@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,18 +10,23 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
     <title>Stock FM</title>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-</head>
-<body>
+    <script>
+      function logOut() {
+          window.location.href="index.html";
+      }
+    </script>
+  </head>
+  <body>
     <header>
-        <a href="index-logged.html  ">
+      <a href="index-logged.html  ">
         <img src="img/LogoWhite.png" alt="" , width="160" style="cursor: pointer" />
-    </a>
-    <nav class="navbar">
+      </a>
+      <nav class="navbar">
         <a href="{{ url('/sesi/storepage-logged')}}">Product</a>
         <a href="{{ url('/about-us-logged')}}">About Us</a>
         <a href="">Contact</a>
         <img src="storage/profile_pictures/avatar.png" alt="#" onclick="openProfile()">
-    </nav>
+      </nav>
     </header>
     <div id="profile-drawer" class="profile-drawer">
         <span class="icon-close" onclick="closeProfile()"><ion-icon name="close"></ion-icon></span>
@@ -204,7 +209,7 @@
         </div>
       </div>
     </footer>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" type="text/javascript"></script>
     <script src="js/script-logged.js"></script>

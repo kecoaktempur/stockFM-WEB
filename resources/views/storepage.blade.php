@@ -12,156 +12,74 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="icon" type="image/x-icon" href="img/Logo cropped.png">
     <link rel="stylesheet" href="css/home.css">
+    <script>
+        function redirect() {
+            window.location.href="home-logged.html";
+        }
+    </script>
 </head>
 <body>
-    @if (Auth::check())
-
-    <div id="profile-drawer" class="profile-drawer">
-        <span class="icon-close" onclick="closeProfile()"><ion-icon name="close"></ion-icon></span>
-        <div class="profile-card">
-            <img src="storage/profile_pictures/avatar.png" alt="#">
-            <h2>@ {{ auth()->user()->username}}</h2>
-            <table>
-                <tr>
-                    <td>
-                        <i class="fa-solid fa-user fa-xl"></i>
-                    </td>
-                    <td>
-                        <p>{{ auth()->user()->fullname}}</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <i class="fa-solid fa-envelope fa-xl"></i>
-                    </td>
-                    <td>
-                        <p>{{ auth()->user()->email}}</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <i class="fa-solid fa-phone fa-xl"></i>
-                    </td>
-                    <td>
-                        <p>{{ auth()->user()->phone}}</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <i class="fa-solid fa-location-dot fa-xl"></i>
-                    </td>
-                    <td>
-                    <p>{{ auth()->user()->location}}</p>
-                    </td>
-                </tr>
-            </table>
-            <div class="tombol-edit">
-                <button>
-                    <a href="/update">Edit Profile</a>
-                </button>
-            </div>
-            <div class="tombol-keluar">
-                <a href="/logout">
-                    <button> Keluar
-                    </button>
-                </a>
-            </div>
-        </div>
-    </div>
-    @else
-
-    <div class="wrapper" id="loginModal">
+    <div class="wrapper">
         <span class="icon-close"><ion-icon name="close"></ion-icon></span>
-        <div class="form-box login">
-            <h2>
-                <span>Login</span>
-            </h2>
-            <form action="/login" method="POST">
-                @csrf
+    <div class="form-box login">
+        <h2>
+            <span>Login</span>
+        </h2>
+            <form action="#">
                 <div class="input-box">
-                <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                <input type="email" name="email" required>
-                <label for="email" >Email</label>
-                @error('email')
-                    <div class="error_msg">{{ $message }}</div>
-                @enderror
-            </div>
-            <div class="input-box">
-                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                <input type="password" name="password" required minlength="8">
-                <label for="password" >Password</label>
-                @error('password')
-                    <div class="error_msg">{{ $message }}</div>
-                @enderror
-            </div>
-            <div class="remember-forgot">
-                <label>
-                    <input type="checkbox">{{__('Remember Me?')}}</label>
-                    @if (Route::has('password.request'))
-                    <a href="#">{{__('Forgot Password?')}}</a>
-                    @endif
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
                 </div>
-                <button name="submit" type="submit" class="login-btn">Login</button>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required minlength="8">
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label input type="checkbox">Remember Me?</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                    <button type="submit" class="login-btn" onclick="redirect()">Login</button>
                 <div class="login-register">
-                    <p>
-                        Don't have an account?
+                    <p> Don't have an account?
                         <a class="register-link" href="#">Register</a>
                     </p>
                 </div>
             </form>
-        </div>
-        <div class="form-box register">
-            <h2>
-                <span>Registration</span>
-            </h2>
-            <form action="/create" method="POST">
-                @csrf
+    </div>
+    <div class="form-box register">
+        <h2>
+            <span>Registration</span>
+        </h2>
+            <form action="#">
                 <div class="input-box">
                     <span class="icon"><ion-icon name="person"></ion-icon></span>
-                    <input name="username" type="text" required />
+                    <input type="text" required>
                     <label>Username</label>
-                    @error('username')
-                    <div class="error_msg">{{ $message }}</div>
-                    @enderror
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                    <input name="email" type="email" required />
+                    <input type="email" required>
                     <label>Email</label>
-                    @error('email')
-                    <div class="error_msg">{{ $message }}</div>
-                    @enderror
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input name="password" type="password" required minlength="8" />
+                    <input type="password" required minlength="8">
                     <label>Password</label>
-                    @error('password')
-                    <div class="error_msg">{{ $message }}</div>
-                    @enderror
-                </div>
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input name="password" type="password" required minlength="8" />
-                    <label>Confirm Password</label>
-                    @error('confirmpw')
-                    <div class="error_msg">{{ $message }}</div>
-                    @enderror
                 </div>
                 <div class="remember-forgot">
-                <label><input type="checkbox" />Agree to Terms & Conditions</label>
+                    <label><input type="checkbox">Agree to Terms & Conditions</label>
                 </div>
                 <button type="submit" class="login-btn">Register</button>
                 <div class="login-register">
-                    <p>
-                        Already have an account?
+                    <p> Already have an account?
                         <a class="login-link" href="#">Login</a>
                     </p>
                 </div>
             </form>
-        </div>
-        </div>
-    @endif
+    </div>
+</div>
     <header>
         <a href="index.html">
             <img src="img/LogoWhite.png" alt="" , width="160" style="cursor: pointer;">
@@ -173,15 +91,7 @@
             <i class="fa-solid fa-bell"></i>
             <i class="fa-regular fa-heart"></i>
             <i class="fa-solid fa-circle-question"></i>
-            @if (Auth::check())
-                @if (auth()->user()->profile_pict != null)
-                <img src="{{ asset('storage/images/profile/'.$user->image)}}">
-                @else
-                <img src="storage/profile_pictures/avatar.png" alt="#" onclick="openProfile()">
-                @endif
-            @else
             <button class="btnLogin-popup">Login</button>
-            @endif
             <div class="sidebar">
                 <button class="add_product">
                         <ion-icon name="add-outline"></ion-icon>

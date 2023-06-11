@@ -160,14 +160,14 @@ header img {
   td {
     width: 50px;
   }
-  tr {
+tr {
     height: 40px;
-  }
-  td i {
+}
+td i {
     text-align: right;
-  }
+}
 
-  .tombol-edit button {
+.tombol-edit button {
     margin-top: 120px;
     font-family: Roboto, sans-serif;
     font-weight: 0;
@@ -182,17 +182,22 @@ header img {
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-decoration: none;
     cursor: pointer;
     -webkit-transition: all .5s;
     -moz-transition: all .5s;
     -ms-transition: all .5s;
     -o-transition: all .5s;
-  }
-  .tombol-edit button:hover {
+}
+.tombol-edit a {
+    text-decoration: none;
+    color: #fff;
+}
+.tombol-edit button:hover {
     background-color: transparent;
     border: solid 2px #b36529;
-  }
-  .tombol-edit button:active {
+}
+.tombol-edit button:active {
     transform: scale(.9);
     -webkit-transform: scale(.9);
     -moz-transform: scale(.9);
@@ -205,6 +210,7 @@ header img {
     -o-transition: all .2s;
   }
   .tombol-keluar button {
+    text-decoration: none;
     margin-top: 30px;
     font-family: Roboto, sans-serif;
     font-weight: 0;
@@ -250,24 +256,50 @@ header img {
     -o-transform: scale(.9);
   }
 
-.navbar .btnLogin-popup {
-  width: 130px;
-  height: 50px;
-  background: transparent;
-  border: 2px solid #fff;
-  outline: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1.1em;
-  color: #fff;
-  font-weight: 500;
-  margin-left: 40px;
-  transition: .5s;
+.tombol-keluar a {
+    text-decoration: none;
 }
-
+.navbar a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    text-decoration: none;
+}
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 80px;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: .5s;
+}
+.navbar a:hover:after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+.navbar .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
 .navbar .btnLogin-popup:hover {
-  background: #fff;
-  color: #162938;
+    background: #fff;
+    color: #162938;
 }
 .wrapper {
     position: fixed;
