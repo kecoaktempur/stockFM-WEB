@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="img/Logo cropped.png">
@@ -10,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700&display=swap" rel="stylesheet">
     <title>Product Card</title>
 </head>
+
 <body>
     <div class="container">
         <div class="card">
@@ -40,7 +42,8 @@
                 </div>
                 <div class="description">
                     <h3 class="title">Product Info</h3>
-                    <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
+                    <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                        Ipsum has been the industry's.</p>
                 </div>
                 <div class="color-container">
                     <h3 class="title">Variant</h3>
@@ -74,4 +77,5 @@
     </div>
     <script src="script/product.js"></script>
 </body>
+
 </html>

@@ -1,4 +1,3 @@
-
 var wrapper = document.querySelector('.wrapper');
 var loginLink = document.querySelector('.login-link');
 var registerLink = document.querySelector('.register-link');
