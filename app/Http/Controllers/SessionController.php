@@ -33,7 +33,7 @@ class SessionController extends Controller
     public function logout() {
         Auth::logout();
         Session::flush();
-        return view('sesi.homepage');
+        return view('sesi/homepage');
     }
     public function create(Request $request) {
         Session::flash('username', $request->username);

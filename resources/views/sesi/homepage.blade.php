@@ -77,12 +77,9 @@
                 <a href="/update">Edit Profile</a>
             </button>
         </div>
-        <div class="tombol-keluar">
-            <a href="/logout">
-                <button> Keluar
-                </button>
-            </a>
-        </div>
+        <button class="tombol-keluar" type="button" onclick="window.location='{{ route("logout") }}'">
+            Keluar
+        </button>
     </div>
 </div>
 @else
