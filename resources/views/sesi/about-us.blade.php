@@ -8,20 +8,15 @@
         About us
     </title>
     <link rel="stylesheet" href="css/about.css">
-    <script>
-        function redirect() {
-            window.location.href="about-us-logged.html";
-        }
-        </script>
 </head>
 <body>
     <header>
-        <a href="index.html">
+        <a href="{{ url('/homepage') }}">
             <img src="img/LogoWhite.png" alt="", width="160"style="cursor: pointer;">
         </a>
         <nav class="navbar">
-            <a href="home.html">Product</a>
-            <a href="about-us.html">About Us</a>
+            <a href="{{ url('/storepage') }}">Product</a>
+            <a href="{{ url('/homepage') }}">Homepage</a>
             <a href="#">Contact</a>
             @if (Auth::check())
         <img src="storage/profile_pictures/avatar.png" alt="#" onclick="openProfile()">
@@ -30,6 +25,154 @@
         @endif
         </nav>
     </header>
+    @if (Auth::check())
+
+    <div id="profile-drawer" class="profile-drawer">
+        <span class="icon-close" onclick="closeProfile()"><ion-icon name="close"></ion-icon></span>
+        <div class="profile-card">
+            <img src="storage/profile_pictures/avatar.png" alt="#">
+            <h2>@ {{ auth()->user()->username}}</h2>
+            <table>
+                <tr>
+                    <td>
+                        <i class="fa-solid fa-user fa-xl"></i>
+                    </td>
+                    <td>
+                        <p>{{ auth()->user()->fullname}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fa-solid fa-envelope fa-xl"></i>
+                    </td>
+                    <td>
+                        <p>{{ auth()->user()->email}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fa-solid fa-phone fa-xl"></i>
+                    </td>
+                    <td>
+                        <p>{{ auth()->user()->phone}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fa-solid fa-location-dot fa-xl"></i>
+                    </td>
+                    <td>
+                    <p>{{ auth()->user()->location}}</p>
+                    </td>
+                </tr>
+            </table>
+            <div class="tombol-edit">
+                <button>
+                    <a href="/update">Edit Profile</a>
+                </button>
+            </div>
+            <div class="tombol-keluar">
+                <a href="/logout">
+                    <button> Keluar
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+    @else
+
+    <div class="wrapper" id="loginModal">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        <div class="form-box login">
+            <h2>
+                <span>Login</span>
+            </h2>
+            <form action="/login" method="POST">
+                @csrf
+                <div class="input-box">
+                <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                <input type="email" name="email" required>
+                <label for="email" >Email</label>
+                @error('email')
+                    <div class="error_msg">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                <input type="password" name="password" required minlength="8">
+                <label for="password" >Password</label>
+                @error('password')
+                    <div class="error_msg">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="remember-forgot">
+                <label>
+                    <input type="checkbox">{{__('Remember Me?')}}</label>
+                    @if (Route::has('password.request'))
+                    <a href="#">{{__('Forgot Password?')}}</a>
+                    @endif
+                </div>
+                <button name="submit" type="submit" class="login-btn">Login</button>
+                <div class="login-register">
+                    <p>
+                        Don't have an account?
+                        <a class="register-link" href="#">Register</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+        <div class="form-box register">
+            <h2>
+                <span>Registration</span>
+            </h2>
+            <form action="/create" method="POST">
+                @csrf
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input name="username" type="text" required />
+                    <label>Username</label>
+                    @error('username')
+                    <div class="error_msg">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input name="email" type="email" required />
+                    <label>Email</label>
+                    @error('email')
+                    <div class="error_msg">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input name="password" type="password" required minlength="8" />
+                    <label>Password</label>
+                    @error('password')
+                    <div class="error_msg">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input name="password" type="password" required minlength="8" />
+                    <label>Confirm Password</label>
+                    @error('confirmpw')
+                    <div class="error_msg">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="remember-forgot">
+                <label><input type="checkbox" />Agree to Terms & Conditions</label>
+                </div>
+                <button type="submit" class="login-btn">Register</button>
+                <div class="login-register">
+                    <p>
+                        Already have an account?
+                        <a class="login-link" href="#">Login</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+        </div>
+    @endif
     <section class="about">
         <h1 align="center">
             About Us
@@ -80,30 +223,97 @@
             </div>
         </div>
     </section>
-    <div class="wrapper">
+    @if (Auth::check())
+
+    <div id="profile-drawer" class="profile-drawer">
+        <span class="icon-close" onclick="closeProfile()"><ion-icon name="close"></ion-icon></span>
+        <div class="profile-card">
+            <img src="storage/profile_pictures/avatar.png" alt="#">
+            <h2>@ {{ auth()->user()->username}}</h2>
+            <table>
+                <tr>
+                    <td>
+                        <i class="fa-solid fa-user fa-xl"></i>
+                    </td>
+                    <td>
+                        <p>{{ auth()->user()->fullname}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fa-solid fa-envelope fa-xl"></i>
+                    </td>
+                    <td>
+                        <p>{{ auth()->user()->email}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fa-solid fa-phone fa-xl"></i>
+                    </td>
+                    <td>
+                        <p>{{ auth()->user()->phone}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <i class="fa-solid fa-location-dot fa-xl"></i>
+                    </td>
+                    <td>
+                    <p>{{ auth()->user()->location}}</p>
+                    </td>
+                </tr>
+            </table>
+            <div class="tombol-edit">
+                <button>
+                    <a href="/update">Edit Profile</a>
+                </button>
+            </div>
+            <div class="tombol-keluar">
+                <a href="/logout">
+                    <button> Keluar
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+    @else
+
+    <div class="wrapper" id="loginModal">
         <span class="icon-close"><ion-icon name="close"></ion-icon></span>
         <div class="form-box login">
             <h2>
                 <span>Login</span>
             </h2>
-            <form action="#">
+            <form action="/login" method="POST">
+                @csrf
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                    <input type="email" required>
-                    <label>Email</label>
+                <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                <input type="email" name="email" required>
+                <label for="email" >Email</label>
+                @error('email')
+                    <div class="error_msg">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                <input type="password" name="password" required minlength="8">
+                <label for="password" >Password</label>
+                @error('password')
+                    <div class="error_msg">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="remember-forgot">
+                <label>
+                    <input type="checkbox">{{__('Remember Me?')}}</label>
+                    @if (Route::has('password.request'))
+                    <a href="#">{{__('Forgot Password?')}}</a>
+                    @endif
                 </div>
-                <div class="input-box">
-                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" required title="minimal 8 jing" minlength="8">
-                    <label>Password</label>
-                </div>
-                <div class="remember-forgot">
-                    <label><input type="checkbox">Remember Me?</label>
-                    <a href="#">Forgot Password?</a>
-                </div>
-                <button type="submit" class="login-btn">Login</button>
+                <button name="submit" type="submit" class="login-btn">Login</button>
                 <div class="login-register">
-                    <p> Don't have an account?
+                    <p>
+                        Don't have an account?
                         <a class="register-link" href="#">Register</a>
                     </p>
                 </div>
@@ -113,34 +323,54 @@
             <h2>
                 <span>Registration</span>
             </h2>
-            <form action="#">
+            <form action="/create" method="POST">
+                @csrf
                 <div class="input-box">
                     <span class="icon"><ion-icon name="person"></ion-icon></span>
-                    <input type="text" required>
+                    <input name="username" type="text" required />
                     <label>Username</label>
+                    @error('username')
+                    <div class="error_msg">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                    <input type="email" required>
+                    <input name="email" type="email" required />
                     <label>Email</label>
+                    @error('email')
+                    <div class="error_msg">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" required minlength="8">
+                    <input name="password" type="password" required minlength="8" />
                     <label>Password</label>
+                    @error('password')
+                    <div class="error_msg">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input name="password" type="password" required minlength="8" />
+                    <label>Confirm Password</label>
+                    @error('confirmpw')
+                    <div class="error_msg">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="remember-forgot">
-                    <label><input type="checkbox">Agree to Terms & Conditions</label>
+                <label><input type="checkbox" />Agree to Terms & Conditions</label>
                 </div>
                 <button type="submit" class="login-btn">Register</button>
                 <div class="login-register">
-                    <p> Already have an account?
+                    <p>
+                        Already have an account?
                         <a class="login-link" href="#">Login</a>
                     </p>
                 </div>
             </form>
         </div>
-    </div>
+        </div>
+    @endif
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -177,9 +407,9 @@
         </div>
     </div>
 </footer>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" type="text/javascript"></script>
-    <script src="js/script.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" type="text/javascript"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

@@ -9,10 +9,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
-class SessionController extends Controller
-{
+class SessionController extends Controller {
     public function index() {
-        return view('sesi.homepage');
+        return view('/sesi/homepage');
     }
     public function login(Request $request) {
         Session::flash('email', $request->email);

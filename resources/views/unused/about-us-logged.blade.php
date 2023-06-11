@@ -8,11 +8,6 @@
         About us
     </title>
     <link rel="stylesheet" type="text/css" href="css/about-logged.css">
-    <script>
-        function logOut() {
-            window.location.href="about-us.html";
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -165,6 +160,6 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" type="text/javascript"></script>
-    <script src="{{ asset('js/script-logged.js')}}"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
