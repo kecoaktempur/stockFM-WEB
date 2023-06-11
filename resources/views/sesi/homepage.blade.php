@@ -15,7 +15,7 @@
 
 <body>
     <header>
-        <a href="index.html">
+        <a href="{{ url('/') }}">
             <img src="img/LogoWhite.png" alt="" , width="160" style="cursor: pointer" />
         </a>
         <nav class="navbar">
@@ -24,7 +24,7 @@
             <a href="">Contact</a>
             @if (Auth::check())
                 @if (auth()->user()->profile_pict != null)
-                    <img src="{{ asset('storage/images/profile/' . $user->image) }}">
+                    <img src="{{ asset('storage/images/profile/' . $user->profile_pict) }}">
                 @else
                     <img src="storage/profile_pictures/avatar.png" alt="#" onclick="openProfile()">
                 @endif
@@ -39,7 +39,11 @@
                 <ion-icon name="close"></ion-icon>
             </span>
             <div class="profile-card">
-                <img src="storage/profile_pictures/avatar.png" alt="#">
+                @if (auth()->user()->profile_pict != null)
+                    <img src="{{ asset('storage/images/profile/' . $user->profile_pict) }}">
+                @else
+                    <img src="storage/profile_pictures/avatar.png" alt="#">
+                @endif
                 <h2>@ {{ auth()->user()->username }}</h2>
                 <table>
                     <tr>
@@ -75,14 +79,18 @@
                         </td>
                     </tr>
                 </table>
-                <div class="tombol-edit">
-                    <button>
-                        <a href="/update">Edit Profile</a>
+                @csrf
+                <form class="tombol-edit" action="/update">
+                    <button type="submit">
+                        Edit Profile
                     </button>
-                </div>
-                <button class="tombol-keluar" type="button" onclick="window.location='{{ route('logout') }}'">
-                    Keluar
-                </button>
+                </form>
+                <form action="/logout" method="POST">
+                    @csrf
+                    <button class="tombol-keluar" type="submit">
+                        Keluar
+                    </button>
+                </form>
             </div>
         </div>
     @else
@@ -194,9 +202,6 @@
     @endif
     <section class="parallax">
         <img src="img/awan-1.png" id="awan-kekanan" alt="#" style="transform: scale(0.7); top: -140px" />
-        <img src="img/awan-2.png" id="awan-kekiri" alt="#" style="transform: scale(0.7); top: -140px" />
-        <img src="img/awan-2.png" id="awan-kekiri" alt="#" style="transform: scale(0.7); top: -140px" />
-        <img src="img/awan-2.png" id="awan-kekiri" alt="#" style="transform: scale(0.7); top: -140px" />
         <img src="img/awan-2.png" id="awan-kekiri" alt="#" style="transform: scale(0.7); top: -140px" />
         <img src="img/factory.png" id="factory" alt="#" style="transform: scale(0.7); top: -70px" />
         <img src="img/floor-trees.png" id="floor-trees" alt="#" style="top: -220px" />

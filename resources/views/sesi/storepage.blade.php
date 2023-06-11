@@ -17,7 +17,6 @@
 
 <body>
     @if (Auth::check())
-
         <div id="profile-drawer" class="profile-drawer">
             <span class="icon-close" onclick="closeProfile()">
                 <ion-icon name="close"></ion-icon>
@@ -64,12 +63,12 @@
                         <a href="/update">Edit Profile</a>
                     </button>
                 </div>
-                <div class="tombol-keluar">
-                    <a href="/logout">
-                        <button> Keluar
-                        </button>
-                    </a>
-                </div>
+                <form action="/logout" method="POST">
+                    @csrf
+                    <button class="tombol-keluar" type="submit">
+                        Keluar
+                    </button>
+                </form>
             </div>
         </div>
     @else
@@ -180,7 +179,7 @@
         </div>
     @endif
     <header>
-        <a href="index.html">
+        <a href="{{ url('/') }}">
             <img src="img/LogoWhite.png" alt="" , width="160" style="cursor: pointer;">
         </a>
         <div class="search">
@@ -200,7 +199,7 @@
                 <button class="btnLogin-popup">Login</button>
             @endif
             <div class="sidebar">
-                <a class="add_product" href="{{ url('admin/addproduct') }}">
+                <a class="add_product" href="{{ url('addproduct') }}">
                     <ion-icon name="add-outline"></ion-icon>
                     <div class="text-place">
                         <h2>Add Product</h2>
@@ -258,7 +257,7 @@
         </h2>
         <div class="item-page">
             <div class="item-card">
-                <a href="product.html">
+                <a href="{{ url('product') }}">
                     <img src="img/Bata_putih.png" alt="">
                 </a>
                 <h3 style="color: #fff; letter-spacing: 3;">

@@ -25,15 +25,15 @@ class SessionController extends Controller
                 'password' => $request->password,
             ];
             if (Auth::attempt($infologin)) {
-                return view('sesi.homepage');
+                return redirect('/');
             } else {
-                return view('sesi.homepage')->withErrors('Username atau password yang anda masukkan salah');
+                return redirect('/')->withErrors('Username atau password yang anda masukkan salah');
             }
     }
     public function logout() {
         Auth::logout();
         Session::flush();
-        return view('sesi/homepage');
+        return redirect('/');
     }
     public function create(Request $request) {
         Session::flash('username', $request->username);
@@ -51,7 +51,7 @@ class SessionController extends Controller
         ];
 
         User::create($data);
-        return view('sesi.homepage');
+        return redirect('/');
     }
     public function update() {
         return view('auth/updateprofile');
@@ -81,7 +81,7 @@ class SessionController extends Controller
         $input['profile_pict'] = $fileName;
     }
     auth()->user()->update($update);
-    return view('/sesi/homepage');
+    return redirect('/');
 }
     public function destroy(Account $account) {
         $account->delete();

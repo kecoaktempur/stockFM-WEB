@@ -75,12 +75,12 @@
                         <a href="/update">Edit Profile</a>
                     </button>
                 </div>
-                <div class="tombol-keluar">
-                    <a href="/logout">
-                        <button> Keluar
-                        </button>
-                    </a>
-                </div>
+                <form action="/logout" method="POST">
+                    @csrf
+                    <button class="tombol-keluar" type="submit">
+                        Keluar
+                    </button>
+                </form>
             </div>
         </div>
     @else

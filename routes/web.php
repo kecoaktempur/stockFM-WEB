@@ -19,7 +19,7 @@ Route::get('/', [PageController::class,'home']);
 
 // Login Regist Logout
 Route::post('login', [SessionController::class, 'login']);
-Route::get('logout', [SessionController::class, 'logout']);
+Route::post('logout', [SessionController::class, 'logout']);
 Route::post('create', [SessionController::class, 'create']);
 
 //Pagging
