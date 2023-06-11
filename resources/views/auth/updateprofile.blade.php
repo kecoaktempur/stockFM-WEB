@@ -38,21 +38,33 @@
                         <span class="icon"><ion-icon name="person"></ion-icon></span>
                         <input name="username" value="{{ auth()->user()->username}}" type="text" required />
                         <label>Username</label>
+                        @error('username')
+                        <div class="error_msg">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="input-box">
                         <span class="icon"><ion-icon name="mail"></ion-icon></span>
                         <input name="fullname" value="{{ auth()->user()->fullname }}" type="text" required />
                         <label>Fullname</label>
+                        @error('fullname')
+                        <div class="error_msg">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="input-box">
                         <span class="icon"><ion-icon name="mail"></ion-icon></span>
                         <input name="phone" value="{{ auth()->user()->phone }}" type="text" required />
                         <label>Phone</label>
+                        @error('phone')
+                        <div class="error_msg">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="input-box">
                         <span class="icon"><ion-icon name="mail"></ion-icon></span>
                         <input name="location" value="{{ auth()->user()->location }}" type="text" required />
                         <label>Location</label>
+                        @error('location')
+                        <div class="error_msg">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="buy-price">

@@ -63,7 +63,8 @@ class SessionController extends Controller
             'fullname' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'max:255'],
-            'location' => ['required', 'string', 'max:255']
+            'location' => ['required', 'string', 'max:255'],
+            'image' => ['required', 'mimes:jpeg,png,jpg,svg', 'max:2048px'],
         ]);
 
     $update = [
@@ -74,9 +75,14 @@ class SessionController extends Controller
         'address' => $request->address,
         'profile_pict' => $profile_pict ?? auth()->user()->profile_pict
     ];
+    if ($update['profile_pict'] != null){
+        $fileName = Auth::id() . '.' . $update->profile_pict->extension();
+        $update->profile_pict->storeAs('storage/profile_pictures/', $fileName);
+        $input['profile_pict'] = $fileName;
+    }
     auth()->user()->update($update);
     return view('/sesi/homepage');
-    }
+}
     public function destroy(Account $account) {
         $account->delete();
         return redirect()->route('session.index')->with('success', 'Account Deleted Successfully.');

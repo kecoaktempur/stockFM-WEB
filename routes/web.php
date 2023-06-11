@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,17 +14,18 @@ use App\Http\Controllers\SessionController;
 |
 */
 
-Route::get('/', [SessionController::class,'index'])->name('index');
-Route::post('login', [SessionController::class, 'login'])->name('login');
-Route::get('logout', [SessionController::class, 'logout'])->name('logout');
-
-Route::post('create', [SessionController::class, 'create'])->name('create');
-
-Route::get('storepage', [SessionController::class, 'storepage']);
-Route::get('about-us', [SessionController::class, 'aboutus']);
-
-Route::get('update', function () {
-    return view('/auth/updateprofile');
+Route::get('/', function () {
+    return view('welcome');
 });
 
-Route::post('profileupdate', [SessionController::class, 'profileupdate'])->name('profileupdate');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';

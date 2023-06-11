@@ -21,7 +21,11 @@
             <a href="{{ url('/about-us') }}">About Us</a>
         <a href="">Contact</a>
         @if (Auth::check())
-        <img src="storage/profile_pictures/avatar.png" alt="#" onclick="openProfile()">
+            @if (auth()->user()->profile_pict != null)
+            <img src="{{ asset('storage/images/profile/'.$user->image)}}">
+            @else
+            <img src="storage/profile_pictures/avatar.png" alt="#" onclick="openProfile()">
+            @endif
         @else
         <button class="btnLogin-popup">Login</button>
         @endif
@@ -95,11 +99,17 @@
             <span class="icon"><ion-icon name="mail"></ion-icon></span>
             <input type="email" name="email" required>
             <label for="email" >Email</label>
+            @error('email')
+                <div class="error_msg">{{ $message }}</div>
+            @enderror
         </div>
         <div class="input-box">
             <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
             <input type="password" name="password" required minlength="8">
             <label for="password" >Password</label>
+            @error('password')
+                <div class="error_msg">{{ $message }}</div>
+            @enderror
         </div>
         <div class="remember-forgot">
             <label>
@@ -127,21 +137,33 @@
                 <span class="icon"><ion-icon name="person"></ion-icon></span>
                 <input name="username" type="text" required />
                 <label>Username</label>
+                @error('username')
+                <div class="error_msg">{{ $message }}</div>
+                @enderror
             </div>
             <div class="input-box">
                 <span class="icon"><ion-icon name="mail"></ion-icon></span>
                 <input name="email" type="email" required />
                 <label>Email</label>
+                @error('email')
+                <div class="error_msg">{{ $message }}</div>
+                @enderror
             </div>
             <div class="input-box">
                 <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
                 <input name="password" type="password" required minlength="8" />
                 <label>Password</label>
+                @error('password')
+                <div class="error_msg">{{ $message }}</div>
+                @enderror
             </div>
             <div class="input-box">
                 <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
                 <input name="password" type="password" required minlength="8" />
                 <label>Confirm Password</label>
+                @error('confirmpw')
+                <div class="error_msg">{{ $message }}</div>
+                @enderror
             </div>
             <div class="remember-forgot">
             <label><input type="checkbox" />Agree to Terms & Conditions</label>
