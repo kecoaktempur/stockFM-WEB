@@ -63,7 +63,7 @@
                     </div>
                 </div>
                 <div class="buy-price">
-                    <a href="#" class="buy"><i class="fas fa-shopping-cart"></i>Contact Us</a>
+                    <a href="https://wa.me/6285856626237" class="buy"><i class="fas fa-shopping-cart"></i>Contact Us</a>
                     <div class="price">
                         <p>Stock : </p>
                         <h1>21</h1>

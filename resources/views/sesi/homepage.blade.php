@@ -21,7 +21,7 @@
         <nav class="navbar">
             <a href="{{ url('storepage') }}">Product</a>
             <a href="{{ url('about-us') }}">About Us</a>
-            <a href="">Contact</a>
+            <a href="https://wa.me/6285856626237">Contact</a>
             @if (Auth::check())
                 @if (auth()->user()->profile_pict != null)
                     <img src="{{ asset('storage/images/profile/' . $user->profile_pict) }}">
