@@ -22,21 +22,21 @@ class PageController extends Controller
         return view('product');
     }
     public function product1() {
-        return view('product');
+        return view('product1');
     }
     public function product2() {
-        return view('product');
+        return view('product2');
     }
     public function product3() {
-        return view('product');
+        return view('product3');
     }
     public function product4() {
-        return view('product');
+        return view('product4');
     }
     public function product5() {
-        return view('product');
+        return view('product5');
     }
     public function product6() {
-        return view('product');
+        return view('product6');
     }
 }

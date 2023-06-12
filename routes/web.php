@@ -29,6 +29,15 @@ Route::get('/update', function () {
     return view('/auth/updateprofile');
 });
 Route::get('product', [PageController::class, 'product']);
+Route::get('product1', [PageController::class, 'product1']);
+Route::get('product2', [PageController::class, 'product2']);
+Route::get('product3', [PageController::class, 'product3']);
+Route::get('product4', [PageController::class, 'product4']);
+Route::get('product5', [PageController::class, 'product5']);
+Route::get('product6', [PageController::class, 'product6']);
+Route::get('product7', [PageController::class, 'product7']);
+Route::get('product8', [PageController::class, 'product8']);
+Route::get('product9', [PageController::class, 'product9']);
 
 Route::post('profileupdate', [SessionController::class, 'profileupdate'])->name('profileupdate');
 

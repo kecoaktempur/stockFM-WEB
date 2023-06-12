@@ -375,14 +375,14 @@
                 </button>
             </div>
             <div class="item-card">
-                <a href="product8.html">
+                <a href="{{ url('product7') }}">
                     <img src="https://cdn.staticcrate.com/stock-hd/materials/materials-Rooftop_Slate_5/1-md.png"
                         alt="">
                 </a>
                 <h3 style="color: #fff; letter-spacing: 3;">
                     Rooftop Slate
                 </h3>
-                <a href="product8.html">
+                <a href="{{ url('product7') }}">
                     <button class="check-item-button">
                         Check Item
                     </button>
