@@ -1,7 +1,7 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
     // image preview
-    $("#profile_pict").change(function(){
+    $("#profile_pict").change(function () {
         var reader = new FileReader();
 
         reader.onload = (e) => {
@@ -10,7 +10,7 @@ $(document).ready(function(){
         reader.readAsDataURL(this.files[0]);
     });
 
-    $("#profile_setup_frm").submit(function(e){
+    $("#profile_setup_frm").submit(function (e) {
         e.preventDefault();
 
         var formData = new FormData(this);
@@ -23,20 +23,20 @@ $(document).ready(function(){
         $("#btn").attr("disabled", true);
         $("#btn").html("Updating...");
         $.ajax({
-            type:"POST",
+            type: "POST",
             url: this.action,
             data: formData,
-            cache:false,
+            cache: false,
             contentType: false,
             processData: false,
             success: (response) => {
                 if (response.code == 400) {
-                    var error = '<span class="alert alert-danger">'+response.msg+'</span>';
+                    var error = '<span class="alert alert-danger">' + response.msg + '</span>';
                     $("#res").html(error);
                     $("#btn").attr("disabled", false);
                     $("#btn").html("Save Profile");
-                }else if(response.code == 200){
-                    var success = '<span class="alert alert-success">'+response.msg+'</span>';
+                } else if (response.code == 200) {
+                    var success = '<span class="alert alert-success">' + response.msg + '</span>';
                     $("#res").html(success);
                     $("#btn").attr("disabled", false);
                     $("#btn").html("Save Profile");

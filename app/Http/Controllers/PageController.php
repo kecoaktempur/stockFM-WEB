@@ -18,4 +18,25 @@ class PageController extends Controller
     public function addproduct() {
         return view('admin.addproduct');
     }
+    public function product() {
+        return view('product');
+    }
+    public function product1() {
+        return view('product');
+    }
+    public function product2() {
+        return view('product');
+    }
+    public function product3() {
+        return view('product');
+    }
+    public function product4() {
+        return view('product');
+    }
+    public function product5() {
+        return view('product');
+    }
+    public function product6() {
+        return view('product');
+    }
 }

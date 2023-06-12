@@ -263,7 +263,7 @@
                 <h3 style="color: #fff; letter-spacing: 3;">
                     Batu Putih
                 </h3>
-                <a href="product.html">
+                <a href="{{ url('product') }}">
                     <button class="check-item-button">
                         Check Item
                     </button>
@@ -273,14 +273,14 @@
                 </button>
             </div>
             <div class="item-card">
-                <a href="product1.html">
+                <a href="{{ url('product1') }}">
                     <img src="https://cdn.staticcrate.com/stock-hd/materials/RenderCrate-Alien_Obsidian/1-md.png"
                         alt="">
                 </a>
                 <h3 style="color: #fff; letter-spacing: 3;">
                     Cooled Lava Rock
                 </h3>
-                <a href="product1.html">
+                <a href="{{ url('product1') }}">
                     <button class="check-item-button">
                         Check Item
                     </button>
@@ -290,14 +290,14 @@
                 </button>
             </div>
             <div class="item-card">
-                <a href="product3.html">
+                <a href="{{ url('product2') }}">
                     <img src="https://cdn.staticcrate.com/stock-hd/materials/materials-Slate_Ground_1/1-md.png"
                         alt="">
                 </a>
                 <h3 style="color: #fff; letter-spacing: 3;">
                     Slate Rock
                 </h3>
-                <a href="product3.html">
+                <a href="{{ url('product2') }}">
                     <button class="check-item-button">
                         Check Item
                     </button>
@@ -307,14 +307,14 @@
                 </button>
             </div>
             <div class="item-card">
-                <a href="product4.html">
+                <a href="{{ url('product3') }}">
                     <img src="https://cdn.staticcrate.com/stock-hd/materials/materials-sand-ocean-sand-1/1-md.png"
                         alt="">
                 </a>
                 <h3 style="color: #fff; letter-spacing: 3;">
                     Ocean Sand
                 </h3>
-                <a href="product4.html">
+                <a href="{{ url('product3') }}">
                     <button class="check-item-button">
                         Check Item
                     </button>
@@ -324,14 +324,14 @@
                 </button>
             </div>
             <div class="item-card">
-                <a href="product5.html">
+                <a href="{{ url('product4') }}">
                     <img src="https://cdn.staticcrate.com/stock-hd/materials/materials-dirt-dirt-material-1/1-md.png"
                         alt="">
                 </a>
                 <h3 style="color: #fff; letter-spacing: 3;">
                     Dirt Material
                 </h3>
-                <a href="product5.html">
+                <a href="{{ url('product4') }}">
                     <button class="check-item-button">
                         Check Item
                     </button>
@@ -341,14 +341,14 @@
                 </button>
             </div>
             <div class="item-card">
-                <a href="product6.html">
+                <a href="{{ url('product5') }}">
                     <img src="https://cdn.staticcrate.com/stock-hd/materials/materials-Metal_Padded_Panels_1/1-md.png"
                         alt="">
                 </a>
                 <h3 style="color: #fff; letter-spacing: 3;">
                     Metal Padded Panels
                 </h3>
-                <a href="product6.html">
+                <a href="{{ url('product5') }}">
                     <button class="check-item-button">
                         Check Item
                     </button>
@@ -358,14 +358,14 @@
                 </button>
             </div>
             <div class="item-card">
-                <a href="product7.html">
+                <a href="{{ url('product6') }}">
                     <img src="https://cdn.staticcrate.com/stock-hd/materials/materials-Stone_Wall_5/1-md.png"
                         alt="">
                 </a>
                 <h3 style="color: #fff; letter-spacing: 3;">
                     Stone Wall
                 </h3>
-                <a href="product7.html">
+                <a href="{{ url('product6') }}">
                     <button class="check-item-button">
                         Check Item
                     </button>

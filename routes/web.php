@@ -28,6 +28,7 @@ Route::get('about-us', [PageController::class, 'aboutus']);
 Route::get('/update', function () {
     return view('/auth/updateprofile');
 });
+Route::get('product', [PageController::class, 'product']);
 
 Route::post('profileupdate', [SessionController::class, 'profileupdate'])->name('profileupdate');
 
