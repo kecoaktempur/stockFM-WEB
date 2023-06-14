@@ -13,12 +13,12 @@
 
 <body>
     <header>
-        <a href="{{ url('/homepage') }}">
+        <a href="{{ url('/') }}">
             <img src="img/LogoWhite.png" alt="", width="160"style="cursor: pointer;">
         </a>
         <nav class="navbar">
             <a href="{{ url('/storepage') }}">Product</a>
-            <a href="{{ url('/homepage') }}">Homepage</a>
+            <a href="{{ url('/') }}">Homepage</a>
             <a href="#">Contact</a>
             @if (Auth::check())
                 <img src="storage/profile_pictures/avatar.png" alt="#" onclick="openProfile()">
@@ -252,7 +252,6 @@
         </div>
     </section>
     @if (Auth::check())
-
         <div id="profile-drawer" class="profile-drawer">
             <span class="icon-close" onclick="closeProfile()">
                 <ion-icon name="close"></ion-icon>
@@ -423,9 +422,9 @@
                 <div class="footer-col">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="#">Who we are</a></li>
-                        <li><a href="#">What we actually do</a></li>
-                        <li><a href="#">What we provide</a></li>
+                        <li><a href="#">Who We Are</a></li>
+                        <li><a href="#">What We Actually Do</a></li>
+                        <li><a href="#">What We Provide</a></li>
                         <li><a href="#">Benefit</a></li>
                     </ul>
                 </div>
@@ -461,7 +460,7 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" type="text/javascript"></script>
-    <script src="js/script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 
 </html>

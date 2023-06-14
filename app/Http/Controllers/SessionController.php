@@ -8,12 +8,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Product;
 
 class SessionController extends Controller
 {
-    public function index() {
-        return view('sesi/homepage');
-    }
     public function login(Request $request) {
         Session::flash('email', $request->email);
         $request->validate([

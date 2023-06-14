@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/img/Logo cropped.png">
@@ -10,11 +11,16 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700&display=swap" rel="stylesheet">
     <title>Profile Settings</title>
 </head>
+
 <body>
     <div class="container">
         <div class="card">
             <div class="itemBackground">
-                <img src="/storage/profile_pictures/avatar.png" class="item show" width="250" id="image_preview_container">
+                @if (auth()->user()->profile_pict != null)
+                    <img class="item show" src="{{ asset('storage/images/profile/' . $user->profile_pict) }}">
+                @else
+                    <img class="item show" src="storage/profile_pictures/avatar.png" alt="#">
+                @endif
                 <span class="image-input">
                     <input type="file" name="profile_pict" id="profile_pict" class="form-control">
                 </span>
@@ -31,39 +37,47 @@
                         <h1 class="big">UPDATE</h1>
                         <span class="new">Profile</span>
                     </div>
-                    <h3 class="small">{{ auth()->user()->fullname}}</h3>
+                    <h3 class="small">{{ auth()->user()->fullname }}</h3>
                 </div>
                 <div class="description">
                     <div class="input-box">
-                        <span class="icon"><ion-icon name="person"></ion-icon></span>
-                        <input name="username" value="{{ auth()->user()->username}}" type="text" required />
+                        <span class="icon">
+                            <ion-icon name="person"></ion-icon>
+                        </span>
+                        <input name="username" value="{{ auth()->user()->username }}" type="text" required />
                         <label>Username</label>
                         @error('username')
-                        <div class="error_msg">{{ $message }}</div>
+                            <div class="error_msg">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="input-box">
-                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <span class="icon">
+                            <ion-icon name="mail"></ion-icon>
+                        </span>
                         <input name="fullname" value="{{ auth()->user()->fullname }}" type="text" required />
                         <label>Fullname</label>
                         @error('fullname')
-                        <div class="error_msg">{{ $message }}</div>
+                            <div class="error_msg">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="input-box">
-                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <span class="icon">
+                            <ion-icon name="mail"></ion-icon>
+                        </span>
                         <input name="phone" value="{{ auth()->user()->phone }}" type="text" required />
                         <label>Phone</label>
                         @error('phone')
-                        <div class="error_msg">{{ $message }}</div>
+                            <div class="error_msg">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="input-box">
-                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <span class="icon">
+                            <ion-icon name="mail"></ion-icon>
+                        </span>
                         <input name="location" value="{{ auth()->user()->location }}" type="text" required />
                         <label>Location</label>
                         @error('location')
-                        <div class="error_msg">{{ $message }}</div>
+                            <div class="error_msg">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
@@ -75,4 +89,5 @@
     </div>
     <script src="/js/profileupdate.js"></script>
 </body>
+
 </html>

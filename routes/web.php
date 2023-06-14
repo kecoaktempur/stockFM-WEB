@@ -28,6 +28,7 @@ Route::get('about-us', [PageController::class, 'aboutus']);
 Route::get('/update', function () {
     return view('/auth/updateprofile');
 });
+Route::get('addproduct', [PageController::class, 'addproduct']);
 Route::get('product', [PageController::class, 'product']);
 Route::get('product1', [PageController::class, 'product1']);
 Route::get('product2', [PageController::class, 'product2']);
